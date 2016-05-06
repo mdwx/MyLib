@@ -21,7 +21,7 @@ public class Consumer implements Runnable {
                         	System.out.println( store.pop().getName()+"出库");   
                        
                         }
-                        System.out.println("产品" + name + "】消费了" + num + "个产品"+"[产品剩余:"
+                        System.out.println("产品" + name + "共消费了" + num + "个产品"+"产品剩余:"
                                 + store.getList().size()+"]");                  
                     Thread.sleep(1000);               
             } catch (InterruptedException e) {

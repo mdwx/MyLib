@@ -147,7 +147,7 @@ public class LoserTree {
     	array.add(new Integer[]{8});
     	array.add(new Integer[]{9});
     	array.add(new Integer[]{10});
-    	array.add(new Integer[]{11});
+    	array.add(new Integer[]{23,56,11});
     	array.add(new Integer[]{1});
     	
     	LoserSort(array);

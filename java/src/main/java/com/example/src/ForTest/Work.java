@@ -25,6 +25,7 @@ public class Work implements Runnable {
 		{		
 			i--;	
 			try {
+				System.out.println("测试");
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
@@ -104,13 +105,13 @@ public class Work implements Runnable {
 	public static void main(String[] args) {
 		//long start =System.currentTimeMillis();
 		long start =System.nanoTime();
-		List<MediaBase> SetlectList = new ArrayList<MediaBase>();
+		List<MediaBase> SetlectList = new ArrayList<>();
 		Work w = new Work(SetlectList);
 		
-		MediaBase arg0 = w.mediaBase("ttet1","werwer");
-		MediaBase arg2 = w.mediaBase("ttet2","werwer");
-		MediaBase arg3 = w.mediaBase("ttet3","werwer");
-		MediaBase arg4 = w.mediaBase("ttet4","werwer");
+		MediaBase arg0 = w.mediaBase("第一个","werwer");
+		MediaBase arg2 = w.mediaBase("第二个","werwer");
+		MediaBase arg3 = w.mediaBase("第三个","werwer");
+		MediaBase arg4 = w.mediaBase("第四个","werwer");
 		SetlectList.add(arg0);
 		SetlectList.add(arg2);
 		SetlectList.add(arg3);
@@ -143,12 +144,12 @@ public class Work implements Runnable {
 		SetlectList.add(arg2);
 		SetlectList.add(arg3);
 		SetlectList.add(arg4);
-	//	Work work = new Work(SetlectList);
+		Work work = new Work(SetlectList);
 		ExecutorService cachedThreadPool = Executors.newCachedThreadPool();				
-		cachedThreadPool.execute(new Work(SetlectList));
-		cachedThreadPool.execute(new Work(SetlectList));
-		cachedThreadPool.execute(new Work(SetlectList));
-		cachedThreadPool.execute(new Work(SetlectList));
+		cachedThreadPool.execute(work);
+		cachedThreadPool.execute(work);
+		cachedThreadPool.execute(work);
+		cachedThreadPool.execute(work);
 		
 		//long end =System.currentTimeMillis();
 

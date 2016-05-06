@@ -14,10 +14,10 @@ public class Producer implements Runnable {
 
     public void run() {
         while (true) {               
-                        Product p = new Product("浜у搧" + (int) (Math.random() * 1000), (int) (Math
+                        Product p = new Product("产品" + (int) (Math.random() * 1000), (int) (Math
                                 .random() * 1000));
                         store.push(p);
-                        System.out.println("浜у搧" + name + "銆戠敓浜т簡浜у搧" + p.toString() + "銆戝簱瀛橀噺"
+                        System.out.println("产品" + name + "共生产了产品" + p.toString() + "还有库存量"
                                 + store.getList().size());                  
                     try {
 						Thread.sleep(500);
