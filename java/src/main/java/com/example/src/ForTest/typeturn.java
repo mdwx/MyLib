@@ -1,5 +1,6 @@
 package com.example.src.ForTest;
 
+import java.io.UnsupportedEncodingException;
 import java.nio.ByteBuffer;
 
 public class typeturn {
@@ -36,9 +37,32 @@ public class typeturn {
         return buffer.getLong();  
     }  
 
-public static void main(String[] args) {  
-      
-     
+
+
+public static void main(String[] args) {
+
+    String name = "\u554A";
+
+    try {
+        byte[] iso8859 = name.getBytes("ISO-8859-1");
+        toHex(iso8859);
+        byte[] gb2312 = name.getBytes("GB2312");
+        toHex(gb2312);
+        byte[] gbk = name.getBytes("GBK");
+        toHex(gbk);
+        byte[] utf16 = name.getBytes("UTF-16");
+        toHex(utf16);
+        byte[] utf8 = name.getBytes("UTF-8");
+        toHex(utf8);
+        byte[] BIG5 = name.getBytes("BIG5");
+        toHex(BIG5);
+        byte[] EUCCN = name.getBytes("EUC-CN");
+        toHex(EUCCN);
+        System.out.println( new String(name.getBytes("UTF-8"),"UTF-8"));
+    } catch (UnsupportedEncodingException e) {
+        e.printStackTrace();
+    }
+
     //测试 int 转 byte 数组  
     int int2 = 141112127;  
     byte[] bytesInt = intToByteArray(int2);  
@@ -55,6 +79,14 @@ public static void main(String[] args) {
     //测试 byte 数组 转 long  
     long long2 = bytesToLong(bytesLong);  
     System.out.println("long2=" + long2);
-}  
-  
+}
+
+    private static void toHex(byte[] chars) {
+
+        for(int i=0; i<chars.length; i++){
+            System.out.printf("%x ",chars[i]);
+        }
+       System.out.println();
+    }
+
 }
