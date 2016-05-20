@@ -76,7 +76,7 @@ public class HashTree<Key,Data> {
 				}
 				else if(childindex[index].occupied == true &&
 						childindex[index].m_key == key &&
-						childindex[index].m_value == value){
+						childindex[index].m_value.equals(value)){
 					return true;					
 				}
 				else{					
@@ -116,18 +116,19 @@ public class HashTree<Key,Data> {
 		}
 		return result;
 	};
-	
+
 	 public static void main(String[] args) {	
-		 HashTree<Integer,Integer> hashTree = new HashTree<Integer, Integer>();
-		 hashTree.Insert(4, 3);
-		 hashTree.Insert(6, 3);
-		 hashTree.Insert(8, 3);
-		 hashTree.Insert(12, 3);
-		 System.out.println(hashTree.Find(4, 3));
+		 HashTree<Integer,test> hashTree = new HashTree<>();
+
+		 hashTree.Insert(4, new test(3));
+		 hashTree.Insert(6, new test(3));
+		 hashTree.Insert(8, new test(3));
+		 hashTree.Insert(12, new test(3));
+		 System.out.println(hashTree.Find(4, new test(3)));
 		 System.out.println(hashTree.Delete(4));
-		 System.out.println(hashTree.Find(4, 3));
-		 System.out.println( hashTree.Insert(4, 3)); 
-		 System.out.println(hashTree.Find(4, 3));
-		 System.out.println(hashTree.Insert(4, 6));	
+		 System.out.println(hashTree.Find(4, new test(3)));
+		 System.out.println( hashTree.Insert(4, new test(3)));
+		 System.out.println(hashTree.Find(4, new test(3)));
+		 System.out.println(hashTree.Insert(4,new test(6)));
 	 }
 }

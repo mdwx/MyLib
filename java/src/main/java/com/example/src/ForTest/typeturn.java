@@ -41,7 +41,7 @@ public class typeturn {
 
 public static void main(String[] args) {
 
-    String name = "\u554A";
+    String name = "ÄãºÃ°¡";
 
     try {
         byte[] iso8859 = name.getBytes("ISO-8859-1");
