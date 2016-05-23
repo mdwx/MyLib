@@ -46,9 +46,13 @@ public class Arithmetic{
             guess = ((high - low)>>1)  + low;
 
             if (array.get(guess).compareTo(key) < 0)
-                low = guess;
+			{
+				low = guess;
+			}
             else
-                high = guess;
+			{
+				high = guess;
+			}
         }
 
         if (high == end +1 )
@@ -189,7 +193,7 @@ public class Arithmetic{
     public static void main(String[] args) {
 		// TODO Auto-generated method stub
     	
-    	ArrayList<Integer> a = new ArrayList<Integer>();
+    	ArrayList<Integer> a = new ArrayList<>();
     	
     	Float[] b = new Float[100];
      

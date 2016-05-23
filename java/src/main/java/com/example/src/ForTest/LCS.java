@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class LCS {
+public class LCS {//That's "Longest Common Subsequence"
 	 
 	 static int bSearch(int Key, List<Integer> b)  
 	 {  
@@ -13,13 +13,11 @@ public class LCS {
 	     
 	     while (high - low > 1) {
 	            guess = ((high - low)>>1)  + low;
-	            
-	            if(Key > b.get(guess))
-	             {
+
+	            if(Key > b.get(guess)){
 	                low = guess;	            
 	            }
-	            else
-	            { 
+	            else{
 	                high = guess;
 	            }
 	        }
@@ -32,9 +30,9 @@ public class LCS {
 		 
 		  int p[]=new int[]{1,7,3,5,8,9,7,10,5,9,18,6,56,34,40,41,42,43,44,45,78,11,23,4,6,28,19,
 				  29,32,30,15,32,33,19,35,36,37,38,39,100};
-		  List<Integer> b = new ArrayList<Integer>();//±£´æµ±Ç°³¤¶ÈµÄ×îÐ¡Êý
+		  List<Integer> b = new ArrayList<Integer>();//ï¿½ï¿½ï¿½æµ±Ç°ï¿½ï¿½ï¿½Èµï¿½ï¿½ï¿½Ð¡ï¿½ï¿½
 		 	
-		  List<ArrayList<Integer>> LCS = new ArrayList<ArrayList<Integer>>();//±£´æµÝ¹é×´Ì¬Êý
+		  List<ArrayList<Integer>> LCS = new ArrayList<ArrayList<Integer>>();//ï¿½ï¿½ï¿½ï¿½Ý¹ï¿½×´Ì¬ï¿½ï¿½
 		 
 		  
 		 	b.add(p[0]);
@@ -43,29 +41,29 @@ public class LCS {
 		 			 	
 		 	for(int i=0; i<p.length; i++)
 		 	{
-		 		if(p[i] > b.get(b.size()-1))//p[n]Âú×ãÌõ¼þ£¬×î´ó³¤¶È¼ÓÒ»£¬bÊý×é¼ÇÂ¼³¤¶È£¬LCSÊý×é¼ÇÂ¼´ýÑ¡ÊýÖµ
+		 		if(p[i] > b.get(b.size()-1))//p[n]ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ó³¤¶È¼ï¿½Ò»ï¿½ï¿½bï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½ï¿½È£ï¿½LCSï¿½ï¿½ï¿½ï¿½ï¿½Â¼ï¿½ï¿½Ñ¡ï¿½ï¿½Öµ
 		 		{
 		 			b.add(p[i]);
 		 			LCS.add(new ArrayList<Integer>());	
 		 			LCS.get(LCS.size()-1).add(p[i]);		 			
 		 		}
-		 		else//Ìí¼Óµ½ÊÊºÏµÄÎ»ÖÃ
+		 		else//ï¿½ï¿½Óµï¿½ï¿½ÊºÏµï¿½Î»ï¿½ï¿½
 		 		{
 		 			int pos = bSearch(p[i],b);
 		 	
 		 			b.set(pos, p[i]);	
 		 			
-		 			if(pos == b.size()-1){//Èç¹ûÎ»ÖÃÔÚ×îºó£¬ÔòÖ±½ÓÈ¡´úÔ­À´µÄÖµ
+		 			if(pos == b.size()-1){//ï¿½ï¿½ï¿½Î»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½ï¿½È¡ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½Öµ
 		 				LCS.get(pos).set(0, p[i]);
 		 			}
-		 			else if(p[i] != LCS.get(pos).get(LCS.get(pos).size()-1)){//·ñÔò¼ÓÈë´ýÑ¡Êý×é		 				
+		 			else if(p[i] != LCS.get(pos).get(LCS.get(pos).size()-1)){//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½		 				
 		 				LCS.get(pos).add(p[i]);		 				
 		 			}
 		 		}
 		 	}
 		 	
 		 	for(int i =LCS.size()-1; i>=0; i--){
-		 		if(LCS.get(i).size() > 1){//Èç¹û´ýÑ¡Êý×éÓÐÆäËûÖµ£¬Ñ¡ÔñÂú×ãÌõ¼þµÄ×î´óÖµ
+		 		if(LCS.get(i).size() > 1){//ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµ
 		 			int k=0;
 		 			while(LCS.get(i).get(k) >= LCS.get(i+1).get(0)){
 		 				k++;
@@ -73,7 +71,7 @@ public class LCS {
 		 			
 		 			LCS.get(i).set(0, LCS.get(i).get(k));
 		 			
-		 			while(LCS.get(i).size()>1){//Çå¿ÕÎÞÐ§Öµ
+		 			while(LCS.get(i).size()>1){//ï¿½ï¿½ï¿½ï¿½ï¿½Ð§Öµ
 		 				LCS.get(i).remove(LCS.get(i).size()-1);
 		 			}
 		 		}
