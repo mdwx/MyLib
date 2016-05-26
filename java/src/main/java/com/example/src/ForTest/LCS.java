@@ -14,15 +14,17 @@ public class LCS {//That's "Longest Common Subsequence"
 	     while (high - low > 1) {
 	            guess = ((high - low)>>1)  + low;
 
-	            if(Key > b.get(guess)){
+	            if(Key > b.get(guess))
+				{
 	                low = guess;	            
 	            }
-	            else{
+	            else
+	            {
 	                high = guess;
 	            }
 	        }
-	   
-	     return high;  
+
+	     return high;
 	 }  
 	  
 	 public static void main(String[] args) {
