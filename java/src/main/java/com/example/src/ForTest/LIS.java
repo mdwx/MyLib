@@ -41,31 +41,30 @@ public class LIS {//That's "longest increasing subsequence"
 		 			 	
 		 	for(int i=0; i<p.length; i++)
 		 	{
-		 		if(p[i] > b.get(b.size()-1))//that value can be LIS
+		 		if(p[i] > b.get(b.size()-1))//
 		 		{
 		 			b.add(p[i]);
 		 			LIS.add(new ArrayList<>());
 		 			LIS.get(LIS.size()-1).add(p[i]);
 		 		}
-		 		else
+		 		else//
 		 		{
-		 			int position = bSearch(p[i],b);
+		 			int pos = bSearch(p[i],b);
 		 	
-		 			b.set(position, p[i]);
+		 			b.set(pos, p[i]);	
 		 			
-		 			if(position == b.size()-1){//that position is the last, just cover it
-		 				LIS.get(position).set(0, p[i]);
+		 			if(pos == b.size()-1){//
+		 				LIS.get(pos).set(0, p[i]);
 		 			}
-		 			else if(p[i] != LIS.get(position).get(LIS.get(position).size()-1)){//put the value into the last list
-		 				LIS.get(position).add(p[i]);
+		 			else if(p[i] != LIS.get(pos).get(LIS.get(pos).size()-1)){//
 		 			}
 		 		}
 		 	}
 		 	
 		 	for(int i =LIS.size()-1; i>=0; i--){
-		 		if(LIS.get(i).size() > 1){//list LIS has sub list,Need choose the last one
+		 		if(LIS.get(i).size() > 1){//list LIS has sub list ,ne 
 		 			int k=0;
-		 			while(LIS.get(i).get(k) >= LIS.get(i+1).get(0)){//choose the last one
+		 			while(LIS.get(i).get(k) >= LIS.get(i+1).get(0)){
 		 				k++;
 		 			}
 		 			
