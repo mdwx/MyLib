@@ -5,7 +5,7 @@ package com.example.src.ForTest;
  */
 import java.util.Random;
 
-public class LCS2 {//This is "Longest Common Subsequence"
+public class LCS {//This is "Longest Common Subsequence"
     public static void main(String[] args){
 
         //设置字符串长度
