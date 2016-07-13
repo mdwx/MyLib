@@ -366,14 +366,14 @@ public class SBTTree<T extends Comparable<T>> extends BinaryTree<T> {
 			}
 			if(this.Left != null)
 			{
-				System.out.println("»¹ÓĞ×ó×ÓÊ÷");
+				System.out.println("è¿˜æœ‰å·¦å­æ ‘");
 				this.Left.PreorderTraversal();
 			}
 					
 					
 			if(this.Right != null)
 			{
-				System.out.println("»¹ÓĞÓÒ×ÓÊ÷");
+				System.out.println("è¿˜æœ‰å³å­æ ‘");
 				this.Right.PreorderTraversal();
 			}		
 		}
@@ -383,7 +383,7 @@ public class SBTTree<T extends Comparable<T>> extends BinaryTree<T> {
 		
 			if(this.Left != null)
 			{
-				System.out.println("»¹ÓĞ×ó×ÓÊ÷");
+				System.out.println("è¿˜æœ‰å·¦å­æ ‘");
 				this.Left.InorderTraversal();
 			}
 			
@@ -395,7 +395,7 @@ public class SBTTree<T extends Comparable<T>> extends BinaryTree<T> {
 									
 			if(this.Right != null)
 			{
-				System.out.println("»¹ÓĞÓÒ×ÓÊ÷");
+				System.out.println("è¿˜æœ‰å³å­æ ‘");
 				this.Right.InorderTraversal();
 			}		
 		}
@@ -405,14 +405,14 @@ public class SBTTree<T extends Comparable<T>> extends BinaryTree<T> {
 				 
 			if(this.Left != null)
 			{
-				System.out.println("»¹ÓĞ×ó×ÓÊ÷");
+				System.out.println("è¿˜æœ‰å·¦å­æ ‘");
 				this.Left.PostorderTraversal();
 			}
 					
 					
 			if(this.Right != null)
 			{
-				System.out.println("»¹ÓĞÓÒ×ÓÊ÷");
+				System.out.println("è¿˜æœ‰å³å­æ ‘");
 				this.Right.PostorderTraversal();
 			}	
 			

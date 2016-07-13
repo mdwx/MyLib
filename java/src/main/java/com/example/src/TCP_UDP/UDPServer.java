@@ -7,7 +7,7 @@ package com.example.src.TCP_UDP;
  */
 import java.io.*;
 import java.net.*;
-class UDPServer{
+public class UDPServer{
     public static void main(String[] args)throws IOException, InterruptedException{
         DatagramSocket  server = new DatagramSocket(8888);
         byte[] recvBuf = new byte[100];

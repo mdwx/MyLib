@@ -20,21 +20,21 @@ public dynamicPlanning()
 	getAnswer(a,N);
 	
 }
-boolean isValid(int step,int x1,int x2,int n) { //ÅÐ¶Ï×´Ì¬ÊÇ·ñºÏ·¨  
+boolean isValid(int step,int x1,int x2,int n) { //åˆ¤æ–­çŠ¶æ€æ˜¯å¦åˆæ³•  
 int y1 = step - x1, y2 = step - x2;  
     return ((x1 >= 0) && (x1 < n) && (x2 >= 0) && (x2 < n) && (y1 >= 0) && (y1 < n) && (y2 >= 0) && (y2 < n));  
 }  
   
-int getValue(int step, int x1,int x2,int n) {  //´¦ÀíÔ½½ç ²»´æÔÚµÄÎ»ÖÃ ¸ø¸ºÎÞÇîµÄÖµ  
+int getValue(int step, int x1,int x2,int n) {  //å¤„ç†è¶Šç•Œ ä¸å­˜åœ¨çš„ä½ç½® ç»™è´Ÿæ— ç©·çš„å€¼  
 	return isValid(step, x1, x2, n)?dp[step % 2][x1][x2]:(-inf);  
 }  
   
-//×´Ì¬±íÊ¾dp[step][i][j] ²¢ÇÒi <= j, µÚstep²½  Á½¸öÈË·Ö±ðÔÚµÚiÐÐºÍµÚjÐÐµÄ×î´óµÃ·Ö Ê±¼ä¸´ÔÓ¶ÈO(n^3) Ê¹ÓÃ¹ö¶¯Êý×é ¿Õ¼ä¸´ÔÓ¶ÈO(n^2)   
+//çŠ¶æ€è¡¨ç¤ºdp[step][i][j] å¹¶ä¸”i <= j, ç¬¬stepæ­¥  ä¸¤ä¸ªäººåˆ†åˆ«åœ¨ç¬¬iè¡Œå’Œç¬¬jè¡Œçš„æœ€å¤§å¾—åˆ† æ—¶é—´å¤æ‚åº¦O(n^3) ä½¿ç”¨æ»šåŠ¨æ•°ç»„ ç©ºé—´å¤æ‚åº¦O(n^2)   
 int getAnswer(int a[][],int n) {  
-int P = n * 2 - 2; //×îÖÕµÄ²½Êý  
+int P = n * 2 - 2; //æœ€ç»ˆçš„æ­¥æ•°  
 int i,j,step,s;  
       
-    //²»ÄÜµ½´ïµÄÎ»ÖÃ ÉèÖÃÎª¸ºÎÞÇî´ó  
+    //ä¸èƒ½åˆ°è¾¾çš„ä½ç½® è®¾ç½®ä¸ºè´Ÿæ— ç©·å¤§  
     for (i = 0; i < n; ++i) {  
         for (j = i; j < n; ++j) {  
             dp[0][i][j] = -inf;  
@@ -47,23 +47,23 @@ int i,j,step,s;
         for (i = 0; i < n; ++i) {  
             for (j = i; j < n; ++j) {  
                 dp[step][i][j] = -inf;  
-                if (!isValid(step, i, j, n)) { //·Ç·¨Î»ÖÃ  
+                if (!isValid(step, i, j, n)) { //éžæ³•ä½ç½®  
                     continue;  
                 }  
-                s = step % 2;  //×´Ì¬ÏÂ±í±ê  
-                //¶ÔÓÚºÏ·¨µÄÎ»ÖÃ½øÐÐdp  
+                s = step % 2;  //çŠ¶æ€ä¸‹è¡¨æ ‡  
+                //å¯¹äºŽåˆæ³•çš„ä½ç½®è¿›è¡Œdp  
                 if (i != j) {  
                     dp[s][i][j] = max(dp[s][i][j], getValue(step - 1, i - 1, j - 1, n));  
                     dp[s][i][j] = max(dp[s][i][j], getValue(step - 1, i - 1, j, n));  
                     dp[s][i][j] = max(dp[s][i][j], getValue(step - 1, i, j - 1, n));  
                     dp[s][i][j] = max(dp[s][i][j], getValue(step - 1, i, j,n));  
-                    dp[s][i][j] += a[i][step - i] + a[j][step - j];  //²»ÔÚÍ¬Ò»¸ö¸ñ×Ó£¬¼ÓÁ½¸öÊý  
+                    dp[s][i][j] += a[i][step - i] + a[j][step - j];  //ä¸åœ¨åŒä¸€ä¸ªæ ¼å­ï¼ŒåŠ ä¸¤ä¸ªæ•°  
                 }  
                 else {  
                     dp[s][i][j] = max(dp[s][i][j], getValue(step - 1, i - 1, j - 1, n));  
                     dp[s][i][j] = max(dp[s][i][j], getValue(step - 1, i - 1, j,  n));  
                     dp[s][i][j] = max(dp[s][i][j], getValue(step - 1, i, j,  n));  
-                    dp[s][i][j] += a[i][step - i]; // ÔÚÍ¬Ò»¸ö¸ñ×ÓÀï£¬Ö»ÄÜ¼ÓÒ»´Î  
+                    dp[s][i][j] += a[i][step - i]; // åœ¨åŒä¸€ä¸ªæ ¼å­é‡Œï¼Œåªèƒ½åŠ ä¸€æ¬¡  
                 }  
                   
             }  

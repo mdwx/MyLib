@@ -31,7 +31,7 @@ public class UDPClien {
 //	        
 //	        client.receive(recvPacket);
 //	        String recvStr = new String(recvPacket.getData() , 0 ,recvPacket.getLength());
-//	        System.out.println("ÊÕµ½:" + recvStr);
+//	        System.out.println("æ”¶åˆ°:" + recvStr);
 	        client.close();
 	    }
 }

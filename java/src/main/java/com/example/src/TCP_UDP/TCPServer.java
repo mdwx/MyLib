@@ -7,7 +7,7 @@ package com.example.src.TCP_UDP;
  */
 import java.io.*;
 import java.net.*;
-class TCPServer{
+public class TCPServer{
     public static void main(String[] args)throws IOException{
         ServerSocket listen = new ServerSocket(5050);
         
@@ -15,7 +15,7 @@ class TCPServer{
         InputStream in = server.getInputStream();
         OutputStream out = server.getOutputStream();
         char c = (char)in.read();
-        System.out.println("ÊÕµ½:" + c);
+        System.out.println("æ”¶åˆ°:" + c);
         out.write('s');
         
         out.close();

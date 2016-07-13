@@ -7,7 +7,7 @@ package com.example.src.TCP_UDP;
  */
 import java.io.*;
 import java.net.*;
-class TCPClient{
+public class TCPClient{
     public static void main(String[] args)throws IOException{
         Socket client = new Socket("127.0.0.1" , 5050);
         InputStream in = client.getInputStream();
@@ -15,7 +15,7 @@ class TCPClient{
         
         out.write('c');
         char c = (char)in.read();
-        System.out.println("ÊÕµ½:" + c);
+        System.out.println("æ”¶åˆ°:" + c);
         out.close();
         in.close();
         client.close();

@@ -13,20 +13,25 @@
     <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/Submatrix.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/Work.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/cin_txt.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/dynamicPlanning.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/dynamicPlanning.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/typeturn.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/TCP_UDP/TCPServer.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/TCP_UDP/TCPClien.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/TCP_UDP/TCPServer.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/TCP_UDP/UDPClien.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/TCP_UDP/UDPServer.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/factory/ItemA.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/factory/ItemB.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/factory/ItemBase.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/factory/StaticFactory_SendFactory.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/producerandconsumer/Consumer.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/producerandconsumer/Market.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/producerandconsumer/Producer.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/tree/HashTree.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/tree/LoserTree.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/tree/SBTTree.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/tree/TireTree.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/producerandconsumer/Consumer.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/producerandconsumer/Market.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/producerandconsumer/Producer.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/producerandconsumer/Product.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/tree/HashTree.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/tree/LoserTree.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/tree/SBTTree.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/tree/TireTree.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/tree/test.java" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

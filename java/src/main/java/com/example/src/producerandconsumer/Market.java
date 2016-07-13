@@ -7,11 +7,11 @@ public class Market {
     public static void main(String[] args) {
         Storage<Product> store = new Storage<>(10);
         ExecutorService cachedThreadPool = Executors.newCachedThreadPool();		
-        Producer p1 = new Producer("Éú²úÕßÒ»ºÅ", store);
-        Producer p2 = new Producer("Éú²úÕß¶şºÅ", store);
-        Producer p3 = new Producer("Éú²úÕßÈıºÅ", store);
-        Consumer c1 = new Consumer("Ïû·ÑÕßÒ»ºÅ", 4, store);
-        Consumer c2 = new Consumer("Ïû·ÑÕß¶şºÅ", 2, store);
+        Producer p1 = new Producer("ç”Ÿäº§è€…ä¸€å·", store);
+        Producer p2 = new Producer("ç”Ÿäº§è€…äºŒå·", store);
+        Producer p3 = new Producer("ç”Ÿäº§è€…ä¸‰å·", store);
+        Consumer c1 = new Consumer("æ¶ˆè´¹è€…ä¸€å·", 4, store);
+        Consumer c2 = new Consumer("æ¶ˆè´¹è€…äºŒå·", 2, store);
 
         cachedThreadPool.execute(p1);
         cachedThreadPool.execute(p2);

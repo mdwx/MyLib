@@ -18,10 +18,10 @@ public class Consumer implements Runnable {
                         for (int i = 0; i < num; i++) {
                         	
                         	
-                        	System.out.println( store.pop().getName()+"³ö¿â");   
+                        	System.out.println( store.pop().getName()+"å‡ºåº“");   
                        
                         }
-                        System.out.println("²úÆ·" + name + "¹²Ïû·ÑÁË" + num + "¸ö²úÆ·"+"²úÆ·Ê£Óà:"
+                        System.out.println("äº§å“" + name + "å…±æ¶ˆè´¹äº†" + num + "ä¸ªäº§å“"+"äº§å“å‰©ä½™:"
                                 + store.getList().size()+"]");                  
                     Thread.sleep(1000);               
             } catch (InterruptedException e) {

@@ -9,11 +9,11 @@ public class LoserTree {
 	  
 	    t = (Key + length) / 2;  
 	    while(t > 0){ 
-	        /* sÖ¸ÏòĞÂµÄÊ¤Õß */ 
+	        /* sæŒ‡å‘æ–°çš„èƒœè€… */ 
 	    	if(index[Key] != Integer.MAX_VALUE  && index[LoserTree[t]] != Integer.MAX_VALUE &&
 	    			index[LoserTree[t]] != 0 && index[Key] != index[LoserTree[t]] && index[Key] != 0)
-	    	System.out.println("·¢Éú¹ıÒ»³¡±È½Ï"+index[Key]+","+index[LoserTree[t]]);
-	        if(index[Key] > index[LoserTree[t]]){   /* LoserTree[t]ÊÇKeyµÄÒª±È½ÏµÄ½Úµã£¬ÊÇÉÏÒ»´Î±È½ÏµÄÊ§°ÜÕß */ 
+	    	System.out.println("å‘ç”Ÿè¿‡ä¸€åœºæ¯”è¾ƒ"+index[Key]+","+index[LoserTree[t]]);
+	        if(index[Key] > index[LoserTree[t]]){   /* LoserTree[t]æ˜¯Keyçš„è¦æ¯”è¾ƒçš„èŠ‚ç‚¹ï¼Œæ˜¯ä¸Šä¸€æ¬¡æ¯”è¾ƒçš„å¤±è´¥è€… */ 
 	        	Temp = Key; 
 	        	Key = LoserTree[t];  
 	            LoserTree[t] = Temp; 
@@ -53,7 +53,7 @@ public class LoserTree {
 		int length; 
 		int i;
 		
-		 if (array.length < 7) {  //³¤¶ÈĞ¡ÓÚ7ÓÃ²åÈë·¨ÅÅĞò	        	
+		 if (array.length < 7) {  //é•¿åº¦å°äº7ç”¨æ’å…¥æ³•æ’åº	        	
 	        	for (i = 0; i<array.length; i++) {  
 	        		Integer t =array[i];  
 	        	    int j = i;
@@ -70,7 +70,7 @@ public class LoserTree {
 		{
 			for(i=0;i+2*length-1<=array.length-1;i+=2*length)
 				Merge(array,i,i+length-1,i+2*length-1);
-			if(i+length<=array.length-1)//ÉĞÓĞÁ½¸ö×ÓÎÄ¼ş£¬ÆäÖĞºóÒ»¸ö³¤¶ÈĞ¡ÓÚlength
+			if(i+length<=array.length-1)//å°šæœ‰ä¸¤ä¸ªå­æ–‡ä»¶ï¼Œå…¶ä¸­åä¸€ä¸ªé•¿åº¦å°äºlength
 				Merge(array,i,i+length-1,array.length-1);
 		}
 	}
@@ -80,18 +80,18 @@ public class LoserTree {
 		int[] LoserTree = new int[array.size()];
 		int[] index = new int[array.size()+1];
 		ArrayList<Integer> outarray = new ArrayList<Integer>();
-		int[] indexfile = new int[array.size()+1]; /* Ö¸Ê¾µ±Ç°×îĞ¡¹Ø¼ü×ÖËùÔÚ¹é²¢¶Î */ 
+		int[] indexfile = new int[array.size()+1]; /* æŒ‡ç¤ºå½“å‰æœ€å°å…³é”®å­—æ‰€åœ¨å½’å¹¶æ®µ */ 
 		int i,k=0;
 		
 		for( i=0; i<array.size(); i++)
 		{
-			Merge_Sort(array.get(i));//¶ÔÃ¿Ò»×é²¢¹éÅÅĞò			
+			Merge_Sort(array.get(i));//å¯¹æ¯ä¸€ç»„å¹¶å½’æ’åº			
 			index[i] = array.get(i)[0];
 			indexfile[i] = 0;
 			
-			LoserTree[i] = array.size();//³õÊ¼»¯Ê±£¬½ÚµãiµÄ¸¸½ÚµãÎªarray.size()
+			LoserTree[i] = array.size();//åˆå§‹åŒ–æ—¶ï¼ŒèŠ‚ç‚¹içš„çˆ¶èŠ‚ç‚¹ä¸ºarray.size()
 		}
-		index[array.size()] = 0;//³õÊ¼»¯Ê±£¬ËùÓĞ½ÚµãµÄ¸¸½ÚµãÎªarray.size()£¬ÖµÎª0
+		index[array.size()] = 0;//åˆå§‹åŒ–æ—¶ï¼Œæ‰€æœ‰èŠ‚ç‚¹çš„çˆ¶èŠ‚ç‚¹ä¸ºarray.size()ï¼Œå€¼ä¸º0
 		
 		for( i = array.size()-1; i >= 0; --i){ 
 	        Adjust(LoserTree, i,array.size(),index); 
