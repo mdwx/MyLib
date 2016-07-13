@@ -11,28 +11,28 @@ public class cin_txt {
 	private static BufferedReader br;
 
 	public static void main(String args[]) {
-        try { // ·ÀÖ¹ÎÄ¼ş½¨Á¢»ò¶ÁÈ¡Ê§°Ü£¬ÓÃcatch²¶×½´íÎó²¢´òÓ¡£¬Ò²¿ÉÒÔthrow  
+        try { // é˜²æ­¢æ–‡ä»¶å»ºç«‹æˆ–è¯»å–å¤±è´¥ï¼Œç”¨catchæ•æ‰é”™è¯¯å¹¶æ‰“å°ï¼Œä¹Ÿå¯ä»¥throw  
   
-            /* ¶ÁÈëTXTÎÄ¼ş */  
-            //String pathname = "D:\\twitter\\input.txt"; // ¾ø¶ÔÂ·¾¶»òÏà¶ÔÂ·¾¶¶¼¿ÉÒÔ£¬ÕâÀïÊÇ¾ø¶ÔÂ·¾¶£¬Ğ´ÈëÎÄ¼şÊ±ÑİÊ¾Ïà¶ÔÂ·¾¶  
-            File filename = new File(".\\output.txt"); // Òª¶ÁÈ¡ÒÔÉÏÂ·¾¶µÄinput¡£txtÎÄ¼ş  
+            /* è¯»å…¥TXTæ–‡ä»¶ */  
+            //String pathname = "D:\\twitter\\input.txt"; // ç»å¯¹è·¯å¾„æˆ–ç›¸å¯¹è·¯å¾„éƒ½å¯ä»¥ï¼Œè¿™é‡Œæ˜¯ç»å¯¹è·¯å¾„ï¼Œå†™å…¥æ–‡ä»¶æ—¶æ¼”ç¤ºç›¸å¯¹è·¯å¾„  
+            File filename = new File(".\\output.txt"); // è¦è¯»å–ä»¥ä¸Šè·¯å¾„çš„inputã€‚txtæ–‡ä»¶  
             InputStreamReader reader = new InputStreamReader(  
-                    new FileInputStream(filename)); // ½¨Á¢Ò»¸öÊäÈëÁ÷¶ÔÏóreader  
+                    new FileInputStream(filename)); // å»ºç«‹ä¸€ä¸ªè¾“å…¥æµå¯¹è±¡reader  
             br = new BufferedReader(reader);
             String line = "";  
             line = br.readLine();  
             while (line != null) { 
                 System.out.println(line);
-                line = br.readLine(); // Ò»´Î¶ÁÈëÒ»ĞĞÊı¾İ  
+                line = br.readLine(); // ä¸€æ¬¡è¯»å…¥ä¸€è¡Œæ•°æ®  
             }  
   
-            /* Ğ´ÈëTxtÎÄ¼ş */  
-            File writename = new File(".\\output.txt"); // Ïà¶ÔÂ·¾¶£¬Èç¹ûÃ»ÓĞÔòÒª½¨Á¢Ò»¸öĞÂµÄoutput¡£txtÎÄ¼ş  
-            writename.createNewFile(); // ´´½¨ĞÂÎÄ¼ş  
+            /* å†™å…¥Txtæ–‡ä»¶ */  
+            File writename = new File(".\\output.txt"); // ç›¸å¯¹è·¯å¾„ï¼Œå¦‚æœæ²¡æœ‰åˆ™è¦å»ºç«‹ä¸€ä¸ªæ–°çš„outputã€‚txtæ–‡ä»¶  
+            writename.createNewFile(); // åˆ›å»ºæ–°æ–‡ä»¶  
             BufferedWriter out = new BufferedWriter(new FileWriter(writename));  
-            out.write("ÎÒ»áĞ´ÈëÎÄ¼şÀ²\r\n"); // \r\n¼´Îª»»ĞĞ  
-            out.flush(); // °Ñ»º´æÇøÄÚÈİÑ¹ÈëÎÄ¼ş  
-            out.close(); // ×îºó¼ÇµÃ¹Ø±ÕÎÄ¼ş  
+            out.write("æˆ‘ä¼šå†™å…¥æ–‡ä»¶å•¦\r\n"); // \r\nå³ä¸ºæ¢è¡Œ  
+            out.flush(); // æŠŠç¼“å­˜åŒºå†…å®¹å‹å…¥æ–‡ä»¶  
+            out.close(); // æœ€åè®°å¾—å…³é—­æ–‡ä»¶  
   
         } catch (Exception e) {  
             e.printStackTrace();  

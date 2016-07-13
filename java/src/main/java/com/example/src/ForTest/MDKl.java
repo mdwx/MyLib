@@ -66,7 +66,7 @@ public class MDKl {
 				 king = 2;				 
 				 break;
 			 default:
-				 System.out.println("ÎÞÐ§");
+				 System.out.println("æ— æ•ˆ");
 				 break;
 			 }
 			

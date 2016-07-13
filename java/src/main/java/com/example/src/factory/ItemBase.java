@@ -1,8 +1,8 @@
 package com.example.src.factory;
 /** 
  * @author Vince  E-mail: xhys01@163.com
- * @version ´´½¨Ê±¼ä£º2015-6-9 ÏÂÎç2:41:27 
- * ÀàËµÃ÷ 
+ * @version åˆ›å»ºæ—¶é—´ï¼š2015-6-9 ä¸‹åˆ2:41:27 
+ * ç±»è¯´æ˜ 
  */
 public interface ItemBase {
     public abstract String toString();   

@@ -1,7 +1,7 @@
 package com.example.src.Adapter;
 
 
-public class Adapter extends Source implements interfaceTargetable{//Éè¼ÆÄ£Ê½ÊÊÅäÆ÷
+public class Adapter extends Source implements interfaceTargetable{//è®¾è®¡æ¨¡å¼é€‚é…å™¨
 
 	private Source source = null;  
     

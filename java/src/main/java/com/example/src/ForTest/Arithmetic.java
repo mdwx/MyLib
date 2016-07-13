@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Arithmetic{
 	
-	//¶ş·Ö·¨²éÕÒ
+	//äºŒåˆ†æ³•æŸ¥æ‰¾
 	public static<T extends Comparable<? super T> > int BinarySearch(List<T> array, T key)
 	{
 		return Arithmetic.BinarySearch(array, 0, array.size(), key);
@@ -72,7 +72,7 @@ public class Arithmetic{
 	
 	
 	
-	//¿ìËÙÅÅĞò
+	//å¿«é€Ÿæ’åº
 	public static<T extends Comparable<? super T> > void QuickSort(List<T> list) { 
 		QuickSort(list,0,list.size()-1);	
 	}
@@ -94,7 +94,7 @@ public class Arithmetic{
         if (Start >= End)  
             return;  
    
-        // ÔÚÊı×é³¤¶ÈĞ¡ÓÚ7µÄÇé¿öÏÂÊ¹ÓÃ²åÈëÅÅĞò  
+        // åœ¨æ•°ç»„é•¿åº¦å°äº7çš„æƒ…å†µä¸‹ä½¿ç”¨æ’å…¥æ’åº  
         if (End - Start + 1 < 7) {  
         	
         	for (int i = Start; i <= End; i++) {  
@@ -109,7 +109,7 @@ public class Arithmetic{
             return;  
         }  
    
-        // Ñ¡ÔñÖĞÊı
+        // é€‰æ‹©ä¸­æ•°
         int len = End - Start + 1;  
         int m = Start + (len >> 1);  
         if (len > 7) {  
@@ -126,65 +126,65 @@ public class Arithmetic{
    
         T v = list.get(m);  
    
-        // a,b½øĞĞ×ó¶ËÉ¨Ãè£¬c,d½øĞĞÓÒ¶ËÉ¨Ãè  
+        // a,bè¿›è¡Œå·¦ç«¯æ‰«æï¼Œc,dè¿›è¡Œå³ç«¯æ‰«æ  
         int a = Start, b = a, c = Start + len - 1, d = c;  
         while (true) {  
-            // ³¢ÊÔÕÒµ½´óÓÚpivotµÄÔªËØ  
+            // å°è¯•æ‰¾åˆ°å¤§äºpivotçš„å…ƒç´   
             while (b <= c && list.get(b).compareTo(v) <= 0) {  
-                // ÓëpivotÏàÍ¬µÄ½»»»µ½×ó¶Ë  
+                // ä¸pivotç›¸åŒçš„äº¤æ¢åˆ°å·¦ç«¯  
                 if (list.get(b).compareTo(v) == 0)  
                     swap(list, a++, b);  
                 b++;  
             }  
             
-            // ³¢ÊÔÕÒµ½Ğ¡ÓÚpivotµÄÔªËØ  
+            // å°è¯•æ‰¾åˆ°å°äºpivotçš„å…ƒç´   
             while (c >= b && list.get(c).compareTo(v) >= 0) {  
-                // ÓëpivotÏàÍ¬µÄ½»»»µ½ÓÒ¶Ë  
+                // ä¸pivotç›¸åŒçš„äº¤æ¢åˆ°å³ç«¯  
                 if (list.get(c).compareTo(v) == 0)  
                     swap(list, c, d--);  
                 c--;  
             }  
             if (b > c)  
                 break;  
-            // ½»»»ÕÒµ½µÄÔªËØ  
+            // äº¤æ¢æ‰¾åˆ°çš„å…ƒç´   
             swap(list, b++, c--);  
         }  
    
-        // ½«ÏàÍ¬µÄÔªËØ½»»»µ½ÖĞ¼ä  
+        // å°†ç›¸åŒçš„å…ƒç´ äº¤æ¢åˆ°ä¸­é—´  
         int s, n = Start + len;  
         s = Math.min(a - Start, b - a);  
         vecswap(list, Start, b - s, s);  
         s = Math.min(d - c, n - d - 1);  
         vecswap(list, b, n - s, s);  
    
-        // µİ¹éµ÷ÓÃ×ÓĞòÁĞ  
+        // é€’å½’è°ƒç”¨å­åºåˆ—  
         if ((s = b - a) > 1)  
         	QuickSort(list, Start, s + Start - 1);  
         if ((s = d - c) > 1)  
         	QuickSort(list, n - s, n - 1);  
     }
 
-	public static<T> void  vecswap(List<T> list, int a, int b, int n) {//ÅúÁ¿½»»»
+	public static<T> void  vecswap(List<T> list, int a, int b, int n) {//æ‰¹é‡äº¤æ¢
 		// TODO Auto-generated method stub
 		for (int i = 0; i < n; i++, a++, b++)  
 	        swap(list, a, b);  
 	}
-	public static<T> void swap(List<T> list,int a,int b){//½»»»
+	public static<T> void swap(List<T> list,int a,int b){//äº¤æ¢
 		T Tem = list.get(a);		
 		list.set(a, list.get(b));		
 		list.set(b, Tem);
     }
-	public static<T> void  vecswap(T[] list, int a, int b, int n) {//ÅúÁ¿½»»»
+	public static<T> void  vecswap(T[] list, int a, int b, int n) {//æ‰¹é‡äº¤æ¢
 		// TODO Auto-generated method stub
 		for (int i = 0; i < n; i++, a++, b++)  
 	        swap(list, a, b);  
 	}
-	public static<T> void swap(T[] list,int a,int b){//½»»»
+	public static<T> void swap(T[] list,int a,int b){//äº¤æ¢
 		T Tem = list[a];		
 		list[a] = list[b];
 		list[b] = Tem;		
     }
-	public static <T extends Comparable<? super T> >  int med3(List<T> list, int a, int b, int c) {  //Èı¸öÊı ,È¡ÖĞÊı
+	public static <T extends Comparable<? super T> >  int med3(List<T> list, int a, int b, int c) {  //ä¸‰ä¸ªæ•° ,å–ä¸­æ•°
 	    return list.get(a).compareTo(list.get(b)) < 0? (list.get(b).compareTo(list.get(c)) < 0?  b : list.get(a).compareTo(list.get(c))<0? c : a)  
 	            : list.get(b).compareTo(list.get(c)) > 0 ? b : list.get(a).compareTo(list.get(c)) > 0? c : a;  
 	}

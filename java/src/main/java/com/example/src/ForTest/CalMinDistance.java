@@ -12,14 +12,14 @@ import java.util.List;
 import java.util.Stack;
 
 /**
- * ÀûÓÃ¶¯Ì¬¹æ»®Çó½â×î¶ÌÂ·¾¶ÎÊÌâ
+ * åˆ©ç”¨åŠ¨æ€è§„åˆ’æ±‚è§£æœ€çŸ­è·¯å¾„é—®é¢˜
  * 
  * @author dell
  * 
  */
 
 public class CalMinDistance {
-	// ¼ÆËã×î¶ÌµÄ¾àÀë
+	// è®¡ç®—æœ€çŸ­çš„è·ç¦»
 	public static int[] calMinDistance(int distance[][]) {
 		int dist[] = new int[distance.length];
 		dist[0] = 0;
@@ -37,12 +37,12 @@ public class CalMinDistance {
 		return dist;
 	}
 
-	// ¼ÆËãÂ·¾¶
+	// è®¡ç®—è·¯å¾„
 	public static String calTheRoute(int distance[][], int dist[]) {
 		Stack<Integer> st = new Stack<Integer>();
 		StringBuffer buf = new StringBuffer();
 		int j = distance.length - 1;
-		st.add(j);// ½«Î²²åÈë
+		st.add(j);// å°†å°¾æ’å…¥
 		while (j > 0) {
 			// int num = 0;
 			for (int i = 0; i < j; i++) {
@@ -61,7 +61,7 @@ public class CalMinDistance {
 		return buf.toString();
 	}
 
-	// ¶ÁÈ¡ÎÄ¼ş
+	// è¯»å–æ–‡ä»¶
 	@SuppressWarnings("resource")
 	public static int[][] readTheFile(File f) {
 		Reader input = null;
@@ -98,11 +98,11 @@ public class CalMinDistance {
 	}
 
 	public static void main(String args[]) {
-		// ¶ÁÎÄ¼ş
+		// è¯»æ–‡ä»¶
 		File f = new File("D:" + File.separator + "distance_1.csv");
 		int distance[][] = readTheFile(f);
 		int dist[] = calMinDistance(distance);
-		System.out.println("×î¶ÌÂ·¾¶³¤¶ÈÎª£º" + dist[distance.length - 1]);
-		System.out.println("×î¶ÌÂ·¾¶Îª£º" + calTheRoute(distance, dist));
+		System.out.println("æœ€çŸ­è·¯å¾„é•¿åº¦ä¸ºï¼š" + dist[distance.length - 1]);
+		System.out.println("æœ€çŸ­è·¯å¾„ä¸ºï¼š" + calTheRoute(distance, dist));
 	}
 }

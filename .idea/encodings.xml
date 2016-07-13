@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/Adapter/interfaceTargetable.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/Arithmetic.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/CalMinDistance.java" charset="GBK" />
+  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/Adapter/Adapter.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/Adapter/interfaceTargetable.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/Arithmetic.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/CalMinDistance.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/LCS.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/LIS.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/MDKl.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/SpellUtil.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/Submatrix.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/Work.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/cin_txt.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/MDKl.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/PatternMatcher.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/SpellUtil.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/Submatrix.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/Work.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/cin_txt.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/dynamicPlanning.java" charset="GBK" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/typeturn.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/typeturn.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/TCP_UDP/TCPServer.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/factory/ItemA.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/factory/ItemB.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/factory/ItemBase.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/factory/StaticFactory_SendFactory.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/producerandconsumer/Consumer.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/producerandconsumer/Market.java" charset="GBK" />
     <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/producerandconsumer/Producer.java" charset="GBK" />

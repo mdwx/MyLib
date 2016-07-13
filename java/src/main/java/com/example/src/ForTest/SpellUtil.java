@@ -26,7 +26,7 @@ import java.util.regex.Pattern;
 public class SpellUtil {
 
 	/***************************************************************************
-	 * »ñÈ¡ÖĞÎÄºº×ÖÆ´Òô Ä¬ÈÏÊä³ö
+	 * è·å–ä¸­æ–‡æ±‰å­—æ‹¼éŸ³ é»˜è®¤è¾“å‡º
 	 * @Name: Pinyin4jUtil.java
 	 * @Description: TODO
 	 * @author: wang_chian@foxmail.com
@@ -39,7 +39,7 @@ public class SpellUtil {
 	}
 
 	/***************************************************************************
-	 * Æ´Òô´óĞ´Êä³ö
+	 * æ‹¼éŸ³å¤§å†™è¾“å‡º
 	 * 
 	 * @Name: Pinyin4jUtil.java
 	 * @Description: TODO
@@ -53,7 +53,7 @@ public class SpellUtil {
 	}
 
 	/***************************************************************************
-	 * Æ´ÒôĞ¡Ğ´Êä³ö
+	 * æ‹¼éŸ³å°å†™è¾“å‡º
 	 * 
 	 * @Name: Pinyin4jUtil.java
 	 * @Description: TODO
@@ -67,7 +67,7 @@ public class SpellUtil {
 	}
 
 	/***************************************************************************
-	 * Ê××ÖÄ¸´óĞ´Êä³ö
+	 * é¦–å­—æ¯å¤§å†™è¾“å‡º
 	 * 
 	 * @Name: Pinyin4jUtil.java
 	 * @Description: TODO
@@ -81,7 +81,7 @@ public class SpellUtil {
 	}
 
 	/***************************************************************************
-	 * Æ´Òô¼òÆ´Êä³ö´óĞ´
+	 * æ‹¼éŸ³ç®€æ‹¼è¾“å‡ºå¤§å†™
 	 * 
 	 * @Name: Pinyin4jUtil.java
 	 * @Description: TODO
@@ -94,7 +94,7 @@ public class SpellUtil {
 		return getsPellConvertAcronym(capitalize(getsPell(chinese)));
 	}
 	/***************************************************************************
-	 * Æ´Òô¼òÆ´Êä³öĞ¡Ğ´
+	 * æ‹¼éŸ³ç®€æ‹¼è¾“å‡ºå°å†™
 	 * 
 	 * @Name: Pinyin4jUtil.java
 	 * @Description: TODO
@@ -108,14 +108,14 @@ public class SpellUtil {
 	}
 
 	/***************************************************************************
-	 * ×Ö·û¼¯×ª»»
+	 * å­—ç¬¦é›†è½¬æ¢
 	 * 
 	 * @Name: Pinyin4jUtil.java
 	 * @Description: TODO
 	 * @author: wang_chian@foxmail.com
 	 * @version: Jan 13, 2012 9:34:11 AM
 	 * @param chinese
-	 *            ÖĞÎÄºº×Ö
+	 *            ä¸­æ–‡æ±‰å­—
 	 * @throws BadHanyuPinyinOutputFormatCombination
 	 */
 	public static Set<String> makeStringByStringSet(String chinese) {
@@ -126,7 +126,7 @@ public class SpellUtil {
 			for (int i = 0; i < srcChar.length; i++) {
 				char c = srcChar[i];
 
-				// ÊÇÖĞÎÄ»òÕßa-z»òÕßA-Z×ª»»Æ´Òô
+				// æ˜¯ä¸­æ–‡æˆ–è€…a-zæˆ–è€…A-Zè½¬æ¢æ‹¼éŸ³
 				if (String.valueOf(c).matches("[\\u4E00-\\u9FA5]+")) {
 
 					try {
@@ -153,7 +153,7 @@ public class SpellUtil {
 	}
 
 	/***************************************************************************
-	 * Default Format Ä¬ÈÏÊä³ö¸ñÊ½
+	 * Default Format é»˜è®¤è¾“å‡ºæ ¼å¼
 	 * 
 	 * @Name: Pinyin4jUtil.java
 	 * @Description: TODO
@@ -163,9 +163,9 @@ public class SpellUtil {
 	 */
 	public static HanyuPinyinOutputFormat getDefaultOutputFormat() {
 		HanyuPinyinOutputFormat format = new HanyuPinyinOutputFormat();
-		format.setCaseType(HanyuPinyinCaseType.LOWERCASE);// Ğ¡Ğ´
-		format.setToneType(HanyuPinyinToneType.WITHOUT_TONE);// Ã»ÓĞÒôµ÷Êı×Ö
-		format.setVCharType(HanyuPinyinVCharType.WITH_U_AND_COLON);// uÏÔÊ¾
+		format.setCaseType(HanyuPinyinCaseType.LOWERCASE);// å°å†™
+		format.setToneType(HanyuPinyinToneType.WITHOUT_TONE);// æ²¡æœ‰éŸ³è°ƒæ•°å­—
+		format.setVCharType(HanyuPinyinVCharType.WITH_U_AND_COLON);// uæ˜¾ç¤º
 		return format;
 	}
 
@@ -219,7 +219,7 @@ public class SpellUtil {
 	}
 
 	/***************************************************************************
-	 * Ê××ÖÄ¸´óĞ´
+	 * é¦–å­—æ¯å¤§å†™
 	 * 
 	 * @Name: Pinyin4jUtil.java
 	 * @Description: TODO
@@ -239,7 +239,7 @@ public class SpellUtil {
 	}
 
 	/***************************************************************************
-	 * ×Ö·û´®¼¯ºÏ×ª»»×Ö·û´®(¶ººÅ·Ö¸ô)
+	 * å­—ç¬¦ä¸²é›†åˆè½¬æ¢å­—ç¬¦ä¸²(é€—å·åˆ†éš”)
 	 * 
 	 * @Name: Pinyin4jUtil.java
 	 * @Description: TODO
@@ -263,7 +263,7 @@ public class SpellUtil {
 	}
 
 	/***************************************************************************
-	 * »ñÈ¡Ã¿¸öÆ´ÒôµÄ¼ò³Æ
+	 * è·å–æ¯ä¸ªæ‹¼éŸ³çš„ç®€ç§°
 	 * 
 	 * @Name: Pinyin4jUtil.java
 	 * @Description: TODO
@@ -278,10 +278,10 @@ public class SpellUtil {
 		StringBuffer strBuff = new StringBuffer();
 		
 		for (String str : strArray) {
-			char arr[] = str.toCharArray(); // ½«×Ö·û´®×ª»¯³ÉcharĞÍÊı×é
+			char arr[] = str.toCharArray(); // å°†å­—ç¬¦ä¸²è½¬åŒ–æˆcharå‹æ•°ç»„
 			
 			for (int i = 0; i < arr.length; i++) {
-				if (arr[i] >= 'A' && arr[i] <= 'Z') { // ÅĞ¶ÏÊÇ·ñÊÇ´óĞ´×ÖÄ¸
+				if (arr[i] >= 'A' && arr[i] <= 'Z') { // åˆ¤æ–­æ˜¯å¦æ˜¯å¤§å†™å­—æ¯
 					strChar += new String(arr[i] + "");
 				}			
 			}
@@ -306,7 +306,7 @@ public class SpellUtil {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		 String[] strs =new String[]{ "22*a°µÊ¾µÄµØ2-qweÖ£Ô´(asd)-123","¥Õ¥§¥¢¥ê©`¥º-Super Hero-ÈÕÓï","Hey Say Jump-¥¦¥£©`¥¯¥¨¥ó¥À©`-ÈÕÓï"}; 
+		 String[] strs =new String[]{ "22*aæš—ç¤ºçš„åœ°2-qweéƒ‘æº(asd)-123","ãƒ•ã‚§ã‚¢ãƒªãƒ¼ã‚º-Super Hero-æ—¥è¯­","Hey Say Jump-ã‚¦ã‚£ãƒ¼ã‚¯ã‚¨ãƒ³ãƒ€ãƒ¼-æ—¥è¯­"}; 
 		 String regEx = ".*?(?=-)";
 		 Pattern p = Pattern.compile(regEx);  
 	     Matcher m;
@@ -335,11 +335,11 @@ public class SpellUtil {
    
 	        
 		System.out.println(SpellUtil.getSpellAcronymToLowerCase(str.substring(0,2))+ "");
-		System.out.println("Ğ¡Ğ´Êä³ö£º" + getSpellToLowerCase(str));
-		System.out.println("´óĞ´Êä³ö£º" + getSpellToUpperCase(str));
-		System.out.println("Ê××ÖÄ¸´óĞ´Êä³ö£º" + getSpellFirstToUpperCase(str));
-		System.out.println("¼òÆ´´óĞ´Êä³ö£º" + getSpellAcronym(str));
-		System.out.println("¼òÆ´Ğ¡Ğ´Êä³ö£º" + getSpellAcronymToLowerCase(str));	
+		System.out.println("å°å†™è¾“å‡ºï¼š" + getSpellToLowerCase(str));
+		System.out.println("å¤§å†™è¾“å‡ºï¼š" + getSpellToUpperCase(str));
+		System.out.println("é¦–å­—æ¯å¤§å†™è¾“å‡ºï¼š" + getSpellFirstToUpperCase(str));
+		System.out.println("ç®€æ‹¼å¤§å†™è¾“å‡ºï¼š" + getSpellAcronym(str));
+		System.out.println("ç®€æ‹¼å°å†™è¾“å‡ºï¼š" + getSpellAcronymToLowerCase(str));	
 		System.out.println(str.toLowerCase());	
 		System.out.println(CurrentPlay);	
 		System.out.println(CurrentPlay.substring(0, CurrentPlay.indexOf("eee"))+"RERER/ERER_eee");	

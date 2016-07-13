@@ -3,6 +3,6 @@ package com.example.src.Adapter;
 public interface interfaceTargetable {
 
 	public abstract void method1();
-	  /* ÐÂÀàµÄ·½·¨ */  
+	  /* æ–°ç±»çš„æ–¹æ³• */  
     public abstract void method2();
 }

@@ -7,8 +7,8 @@ import java.util.concurrent.Executors;
 
 /** 
  * @author Vince  E-mail: xhys01@163.com
- * @version ´´½¨Ê±¼ä£º2015-6-2 ÉÏÎç11:41:11 
- * ÀàËµÃ÷ 
+ * @version åˆ›å»ºæ—¶é—´ï¼š2015-6-2 ä¸Šåˆ11:41:11 
+ * ç±»è¯´æ˜ 
  */
 public class Work implements Runnable {
 
@@ -25,7 +25,7 @@ public class Work implements Runnable {
 		{		
 			i--;	
 			try {
-				System.out.println("²âÊÔ");
+				System.out.println("æµ‹è¯•");
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
@@ -108,10 +108,10 @@ public class Work implements Runnable {
 		List<MediaBase> SetlectList = new ArrayList<>();
 		Work w = new Work(SetlectList);
 		
-		MediaBase arg0 = w.mediaBase("µÚÒ»¸ö","werwer");
-		MediaBase arg2 = w.mediaBase("µÚ¶ş¸ö","werwer");
-		MediaBase arg3 = w.mediaBase("µÚÈı¸ö","werwer");
-		MediaBase arg4 = w.mediaBase("µÚËÄ¸ö","werwer");
+		MediaBase arg0 = w.mediaBase("ç¬¬ä¸€ä¸ª","werwer");
+		MediaBase arg2 = w.mediaBase("ç¬¬äºŒä¸ª","werwer");
+		MediaBase arg3 = w.mediaBase("ç¬¬ä¸‰ä¸ª","werwer");
+		MediaBase arg4 = w.mediaBase("ç¬¬å››ä¸ª","werwer");
 		SetlectList.add(arg0);
 		SetlectList.add(arg2);
 		SetlectList.add(arg3);

@@ -7,8 +7,8 @@ import java.util.regex.Pattern;
 
 /** 
  * @author Vince  E-mail: xhys01@163.com
- * @version ´´½¨Ê±¼ä£º2015-6-9 ÉÏÎç9:27:43 
- * ÀàËµÃ÷ 
+ * @version åˆ›å»ºæ—¶é—´ï¼š2015-6-9 ä¸Šåˆ9:27:43 
+ * ç±»è¯´æ˜ 
  */
 public class PatternMatcher {
 
