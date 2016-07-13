@@ -12,7 +12,7 @@ public class test  {
     }
 
     @Override
-    public boolean equals(Object obj) {//that is bad idea to Override "equals" see http://www.cnblogs.com/kavlez/p/4185547.html
+    public boolean equals(Object obj) {//that is bad idea to Override "equals"  http://www.cnblogs.com/kavlez/p/4185547.html
         if (obj instanceof test) {
             return (this.vuale == ((test) obj).vuale);
         }

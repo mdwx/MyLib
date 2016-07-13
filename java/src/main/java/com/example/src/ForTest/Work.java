@@ -25,7 +25,7 @@ public class Work implements Runnable {
 		{		
 			i--;	
 			try {
-				System.out.println("测试");
+				System.out.println("Testing!");
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
@@ -108,10 +108,10 @@ public class Work implements Runnable {
 		List<MediaBase> SetlectList = new ArrayList<>();
 		Work w = new Work(SetlectList);
 		
-		MediaBase arg0 = w.mediaBase("第一个","werwer");
-		MediaBase arg2 = w.mediaBase("第二个","werwer");
-		MediaBase arg3 = w.mediaBase("第三个","werwer");
-		MediaBase arg4 = w.mediaBase("第四个","werwer");
+		MediaBase arg0 = w.mediaBase("First","werwer");
+		MediaBase arg2 = w.mediaBase("Second","werwer");
+		MediaBase arg3 = w.mediaBase("Third","werwer");
+		MediaBase arg4 = w.mediaBase("Fourth","werwer");
 		SetlectList.add(arg0);
 		SetlectList.add(arg2);
 		SetlectList.add(arg3);
