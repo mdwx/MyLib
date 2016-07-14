@@ -14,17 +14,19 @@ public class UDPServer{
         DatagramPacket recvPacket 
         = new DatagramPacket(recvBuf , recvBuf.length);
         int i =0;
-        server.receive(recvPacket);
         while(i<1000){
-    
-
-    //   String recvStr = new String(recvPacket.getData() , 0 , recvPacket.getLength());
+        server.receive(recvPacket);
+        System.out.println(new String(recvPacket.getData() , 0 ,recvPacket.getLength()));
 
         String sendStr = "Server"+i;
         byte[] sendBuf;
         sendBuf = sendStr.getBytes();
-        DatagramPacket sendPacket 
-            = new DatagramPacket(sendBuf , sendBuf.length , recvPacket.getAddress() , recvPacket.getPort() );
+        DatagramPacket sendPacket
+                = new DatagramPacket(sendBuf , sendBuf.length , recvPacket.getAddress() , recvPacket.getPort() );
+
+    
+
+    //   String recvStr = new String(recvPacket.getData() , 0 , recvPacket.getLength());
 
         	
         	server.send(sendPacket);
