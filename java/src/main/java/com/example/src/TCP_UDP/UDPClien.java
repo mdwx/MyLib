@@ -1,5 +1,7 @@
 package com.example.src.TCP_UDP;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -8,7 +10,7 @@ import java.net.InetAddress;
 public class UDPClien {
 	 public static void main(String[] args)throws IOException{
 	        DatagramSocket client = new DatagramSocket();
-	        
+
 	        String sendStr = "Hello! I'm Client";
 	        byte[] sendBuf;
 	        sendBuf = sendStr.getBytes();
@@ -16,25 +18,34 @@ public class UDPClien {
 	        int port = 8888;
 	        DatagramPacket sendPacket 
 	            = new DatagramPacket(sendBuf ,sendBuf.length , addr , port);
-	        int i = 0;
 	        sendPacket.setData(sendBuf);
-	        while(i <=500){
-	        	String Str = "This is :"+i;
-	        	sendBuf = Str.getBytes();
-	        	sendPacket.setData(sendBuf);
-	        	client.send(sendPacket);
-	        	i++;
-	        }
-	        byte[] recvBuf = new byte[100];
-	        DatagramPacket recvPacket
-	            = new DatagramPacket(recvBuf , recvBuf.length);
+			client.send(sendPacket);
 
-		 	while(i>1) {
-				client.receive(recvPacket);
-				String recvStr = new String(recvPacket.getData(), 0, recvPacket.getLength());
-				System.out.println("recv:" + recvStr);
-				i--;
+	        byte[] recvBuf = new byte[4*1024];
+	        DatagramPacket recvPacket = new DatagramPacket(recvBuf , recvBuf.length);
+			File file = new File("E:\\New.mkv");
+
+			if(!file.exists())
+			{
+				try {
+					file.createNewFile();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
-		 	client.close();
-	    }
-}
+		 client.setSoTimeout(15000);
+			 FileOutputStream outputStream = new FileOutputStream(file);
+		 try {
+			 while (true) {
+
+				 client.receive(recvPacket);
+
+				 outputStream.write(recvPacket.getData(), 0, recvPacket.getLength());
+
+			 }
+		 }catch(IOException e){
+				 client.close();
+			 }
+		 }
+	 }

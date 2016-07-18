@@ -10,30 +10,28 @@ import java.net.*;
 public class UDPServer{
     public static void main(String[] args)throws IOException, InterruptedException{
         DatagramSocket  server = new DatagramSocket(8888);
-        byte[] recvBuf = new byte[100];
-        DatagramPacket recvPacket 
-        = new DatagramPacket(recvBuf , recvBuf.length);
-        int i =0;
-        while(i<1000){
+        byte[] recvBuf = new byte[4*1024];
+        DatagramPacket recvPacket = new DatagramPacket(recvBuf , recvBuf.length);
+
         server.receive(recvPacket);
         System.out.println(new String(recvPacket.getData() , 0 ,recvPacket.getLength()));
+        DatagramPacket sendPacket1  = new DatagramPacket(recvBuf , recvBuf.length , recvPacket.getAddress() , recvPacket.getPort() );
 
-        String sendStr = "Server"+i;
-        byte[] sendBuf;
-        sendBuf = sendStr.getBytes();
-        DatagramPacket sendPacket
-                = new DatagramPacket(sendBuf , sendBuf.length , recvPacket.getAddress() , recvPacket.getPort() );
+        DatagramSocket  server2 = new DatagramSocket();
+        DatagramPacket sendPacket2 = new DatagramPacket(recvBuf ,recvBuf.length , InetAddress.getByName("127.0.0.1") , 5555);
+        server2.send(sendPacket2);
+        server2.setSoTimeout(15000);
+            try {
+                while (true) {
 
-    
+                    server2.receive(recvPacket);
+                    sendPacket1.setLength(recvPacket.getLength());
+                    server.send(sendPacket1);
+                }
+            }catch(IOException e){
+                server2.close();
+                server.close();
+            }
 
-    //   String recvStr = new String(recvPacket.getData() , 0 , recvPacket.getLength());
-
-        	
-        	server.send(sendPacket);
-        	i++;
-        	
-        }
-        
-        server.close();
     }
 }
