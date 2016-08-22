@@ -20,22 +20,20 @@ public dynamicPlanning()
 	getAnswer(a,N);
 	
 }
-boolean isValid(int step,int x1,int x2,int n) { //判断状态是否合法  
+boolean isValid(int step,int x1,int x2,int n) {
 int y1 = step - x1, y2 = step - x2;  
     return ((x1 >= 0) && (x1 < n) && (x2 >= 0) && (x2 < n) && (y1 >= 0) && (y1 < n) && (y2 >= 0) && (y2 < n));  
 }  
   
-int getValue(int step, int x1,int x2,int n) {  //处理越界 不存在的位置 给负无穷的值  
+int getValue(int step, int x1,int x2,int n) {
 	return isValid(step, x1, x2, n)?dp[step % 2][x1][x2]:(-inf);  
 }  
   
-//状态表示dp[step][i][j] 并且i <= j, 第step步  两个人分别在第i行和第j行的最大得分 时间复杂度O(n^3) 使用滚动数组 空间复杂度O(n^2)   
-int getAnswer(int a[][],int n) {  
-int P = n * 2 - 2; //最终的步数  
+int getAnswer(int a[][],int n) {
+int P = n * 2 - 2;
 int i,j,step,s;  
       
-    //不能到达的位置 设置为负无穷大  
-    for (i = 0; i < n; ++i) {  
+    for (i = 0; i < n; ++i) {
         for (j = i; j < n; ++j) {  
             dp[0][i][j] = -inf;  
         }  
@@ -47,23 +45,22 @@ int i,j,step,s;
         for (i = 0; i < n; ++i) {  
             for (j = i; j < n; ++j) {  
                 dp[step][i][j] = -inf;  
-                if (!isValid(step, i, j, n)) { //非法位置  
+                if (!isValid(step, i, j, n)) {
                     continue;  
                 }  
-                s = step % 2;  //状态下表标  
-                //对于合法的位置进行dp  
-                if (i != j) {  
+                s = step % 2;
+                if (i != j) {
                     dp[s][i][j] = max(dp[s][i][j], getValue(step - 1, i - 1, j - 1, n));  
                     dp[s][i][j] = max(dp[s][i][j], getValue(step - 1, i - 1, j, n));  
                     dp[s][i][j] = max(dp[s][i][j], getValue(step - 1, i, j - 1, n));  
                     dp[s][i][j] = max(dp[s][i][j], getValue(step - 1, i, j,n));  
-                    dp[s][i][j] += a[i][step - i] + a[j][step - j];  //不在同一个格子，加两个数  
+                    dp[s][i][j] += a[i][step - i] + a[j][step - j];
                 }  
                 else {  
                     dp[s][i][j] = max(dp[s][i][j], getValue(step - 1, i - 1, j - 1, n));  
                     dp[s][i][j] = max(dp[s][i][j], getValue(step - 1, i - 1, j,  n));  
                     dp[s][i][j] = max(dp[s][i][j], getValue(step - 1, i, j,  n));  
-                    dp[s][i][j] += a[i][step - i]; // 在同一个格子里，只能加一次  
+                    dp[s][i][j] += a[i][step - i];
                 }  
                   
             }  

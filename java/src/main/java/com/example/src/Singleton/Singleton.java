@@ -2,21 +2,21 @@ package com.example.src.Singleton;
 
 public class Singleton {  
 	  
-    /* Ë½ÓĞ¹¹Ôì·½·¨£¬·ÀÖ¹±»ÊµÀı»¯ */  
+    /* ç§æœ‰æ„é€ æ–¹æ³•ï¼Œé˜²æ­¢è¢«å®ä¾‹åŒ– */  
     private Singleton() {  
     }  
   
-    /* ´Ë´¦Ê¹ÓÃÒ»¸öÄÚ²¿ÀàÀ´Î¬»¤µ¥Àı */  
+    /* æ­¤å¤„ä½¿ç”¨ä¸€ä¸ªå†…éƒ¨ç±»æ¥ç»´æŠ¤å•ä¾‹ */  
     private static class SingletonFactory {  
         private static Singleton instance = new Singleton();  
     }  
   
-    /* »ñÈ¡ÊµÀı */  
+    /* è·å–å®ä¾‹ */  
     public static Singleton getInstance() {  
         return SingletonFactory.instance;  
     }  
   
-    /* Èç¹û¸Ã¶ÔÏó±»ÓÃÓÚĞòÁĞ»¯£¬¿ÉÒÔ±£Ö¤¶ÔÏóÔÚĞòÁĞ»¯Ç°ºó±£³ÖÒ»ÖÂ */  
+    /* å¦‚æœè¯¥å¯¹è±¡è¢«ç”¨äºåºåˆ—åŒ–ï¼Œå¯ä»¥ä¿è¯å¯¹è±¡åœ¨åºåˆ—åŒ–å‰åä¿æŒä¸€è‡´ */  
     public Object readResolve() {  
         return getInstance();  
     }  

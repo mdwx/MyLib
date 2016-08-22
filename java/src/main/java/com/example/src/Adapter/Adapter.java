@@ -1,7 +1,7 @@
 package com.example.src.Adapter;
 
 
-public class Adapter extends Source implements interfaceTargetable{//设计模式适配器
+public class Adapter extends Source implements interfaceTargetable{
 
 	private Source source = null;  
     

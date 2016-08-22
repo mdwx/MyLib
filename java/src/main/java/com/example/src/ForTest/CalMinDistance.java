@@ -11,15 +11,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Stack;
 
-/**
- * 利用动态规划求解最短路径问题
- * 
- * @author dell
- * 
- */
 
 public class CalMinDistance {
-	// 计算最短的距离
+
 	public static int[] calMinDistance(int distance[][]) {
 		int dist[] = new int[distance.length];
 		dist[0] = 0;
@@ -37,12 +31,12 @@ public class CalMinDistance {
 		return dist;
 	}
 
-	// 计算路径
+
 	public static String calTheRoute(int distance[][], int dist[]) {
 		Stack<Integer> st = new Stack<Integer>();
 		StringBuffer buf = new StringBuffer();
 		int j = distance.length - 1;
-		st.add(j);// 将尾插入
+		st.add(j);
 		while (j > 0) {
 			// int num = 0;
 			for (int i = 0; i < j; i++) {
@@ -61,7 +55,6 @@ public class CalMinDistance {
 		return buf.toString();
 	}
 
-	// 读取文件
 	@SuppressWarnings("resource")
 	public static int[][] readTheFile(File f) {
 		Reader input = null;
@@ -98,11 +91,10 @@ public class CalMinDistance {
 	}
 
 	public static void main(String args[]) {
-		// 读文件
 		File f = new File("D:" + File.separator + "distance_1.csv");
 		int distance[][] = readTheFile(f);
 		int dist[] = calMinDistance(distance);
-		System.out.println("最短路径长度为：" + dist[distance.length - 1]);
-		System.out.println("最短路径为：" + calTheRoute(distance, dist));
+		System.out.println("" + dist[distance.length - 1]);
+		System.out.println("" + calTheRoute(distance, dist));
 	}
 }

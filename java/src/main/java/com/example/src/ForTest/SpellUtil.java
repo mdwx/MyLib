@@ -66,9 +66,7 @@ public class SpellUtil {
 		return getsPellZh_CN(makeStringByStringSet(chinese)).toLowerCase();
 	}
 
-	/***************************************************************************
-	 * 首字母大写输出
-	 * 
+	/***************************************************************************	 *
 	 * @Name: Pinyin4jUtil.java
 	 * @Description: TODO
 	 * @author: wang_chian@foxmail.com
@@ -81,8 +79,7 @@ public class SpellUtil {
 	}
 
 	/***************************************************************************
-	 * 拼音简拼输出大写
-	 * 
+	 *
 	 * @Name: Pinyin4jUtil.java
 	 * @Description: TODO
 	 * @author: wang_chian@foxmail.com
@@ -94,8 +91,7 @@ public class SpellUtil {
 		return getsPellConvertAcronym(capitalize(getsPell(chinese)));
 	}
 	/***************************************************************************
-	 * 拼音简拼输出小写
-	 * 
+	 *
 	 * @Name: Pinyin4jUtil.java
 	 * @Description: TODO
 	 * @author: wang_chian@foxmail.com
@@ -108,14 +104,13 @@ public class SpellUtil {
 	}
 
 	/***************************************************************************
-	 * 字符集转换
-	 * 
+	 *
 	 * @Name: Pinyin4jUtil.java
 	 * @Description: TODO
 	 * @author: wang_chian@foxmail.com
 	 * @version: Jan 13, 2012 9:34:11 AM
 	 * @param chinese
-	 *            中文汉字
+
 	 * @throws BadHanyuPinyinOutputFormatCombination
 	 */
 	public static Set<String> makeStringByStringSet(String chinese) {
@@ -126,7 +121,6 @@ public class SpellUtil {
 			for (int i = 0; i < srcChar.length; i++) {
 				char c = srcChar[i];
 
-				// 是中文或者a-z或者A-Z转换拼音
 				if (String.valueOf(c).matches("[\\u4E00-\\u9FA5]+")) {
 
 					try {
@@ -153,8 +147,7 @@ public class SpellUtil {
 	}
 
 	/***************************************************************************
-	 * Default Format 默认输出格式
-	 * 
+	 *
 	 * @Name: Pinyin4jUtil.java
 	 * @Description: TODO
 	 * @author: wang_chian@foxmail.com
@@ -163,9 +156,9 @@ public class SpellUtil {
 	 */
 	public static HanyuPinyinOutputFormat getDefaultOutputFormat() {
 		HanyuPinyinOutputFormat format = new HanyuPinyinOutputFormat();
-		format.setCaseType(HanyuPinyinCaseType.LOWERCASE);// 小写
-		format.setToneType(HanyuPinyinToneType.WITHOUT_TONE);// 没有音调数字
-		format.setVCharType(HanyuPinyinVCharType.WITH_U_AND_COLON);// u显示
+		format.setCaseType(HanyuPinyinCaseType.LOWERCASE);
+		format.setToneType(HanyuPinyinToneType.WITHOUT_TONE);
+		format.setVCharType(HanyuPinyinVCharType.WITH_U_AND_COLON);
 		return format;
 	}
 
@@ -219,7 +212,7 @@ public class SpellUtil {
 	}
 
 	/***************************************************************************
-	 * 首字母大写
+
 	 * 
 	 * @Name: Pinyin4jUtil.java
 	 * @Description: TODO
