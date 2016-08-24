@@ -4,16 +4,23 @@ import java.util.Observable;
 
 public class RingBuffer extends Observable{
 
-	private int RingBuffer_SIZE = 32*1024;
+	private int RingBuffer_SIZE = 1024;
 	private byte[] m_buf;
 	private int m_read, m_write;  ///< The indices of the next read/write operations. read == write implies that buffer is empty.
 
 	public RingBuffer(){
-		m_buf = new byte[RingBuffer_SIZE];
+		RingBufferInit();
 	}
 	public RingBuffer(int size){
 		RingBuffer_SIZE = size;
+		RingBufferInit();
+	}
+	private void RingBufferInit(){
 		m_buf = new byte[RingBuffer_SIZE];
+		m_read = m_write = 0;
+	}
+	public void insert(byte[] begin) {
+		insert(begin, begin.length);
 	}
 	public void insert(byte[] begin, int length) {
 		int r = m_read;  // The read position
@@ -47,9 +54,12 @@ public class RingBuffer extends Observable{
 	}
 	
 	/// Read data from current position if there is enough data to fill the range (otherwise return -1). Does not move read pointer.
-	public int read(byte[] begin, int length) {
+	public int read(byte[] begin) {
+		return read(begin, 0,begin.length);
+	}
+	public int read(byte[] begin,int offsite, int length) {
 		
-		if (modulo(m_write - m_read) <= length) return -1;  // Not enough audio available
+		if (modulo(m_write - m_read) < length) return -1;  // Not enough Data available
 		
 		int r = m_read;
 		
@@ -57,14 +67,12 @@ public class RingBuffer extends Observable{
 		if(length > begin.length)length = begin.length;
 
 		if(length <= modulo(-r)){	//loop enough data 	do not modulo
-			System.arraycopy(m_buf, r, begin, 0, length);			 // Copy audio to output iterator
+			System.arraycopy(m_buf, r, begin, offsite, length);			 // Copy Data to output iterator
 		}
 		else{		//need modulo
-			System.arraycopy(m_buf, r, begin, 0, modulo(-r));		 // Copy audio to output iterator
-			System.arraycopy(m_buf, 0, begin, modulo(-r), length - modulo(-r)); // Copy audio to output iterator
+			System.arraycopy(m_buf, r, begin, offsite, modulo(-r));		 // Copy Data to output iterator
+			System.arraycopy(m_buf, offsite, begin, modulo(-r), length - modulo(-r)); // Copy Data to output iterator
 		}
-	
-		
 		return length;
 	}
 	public void pop(int  n) { m_read = modulo(m_read + n); } ///< Move reading pointer forward.
@@ -74,9 +82,7 @@ public class RingBuffer extends Observable{
 	
 	public void setRingBufferSize(int size){
 		
-		if(size <= 0){
-			return;
-		}			
+		if(size <= 0){ return; }
 		this.RingBuffer_SIZE = size;
 		m_buf = new byte[RingBuffer_SIZE];
 	}

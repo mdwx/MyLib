@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-
 android {
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
@@ -23,6 +22,7 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.3.0'
-    compile 'org.greenrobot:greendao:2.2.1'
+    compile 'org.greenrobot:greendao:3.1.0'
+    compile 'org.greenrobot:eventbus:3.0.0'
     compile project(':logger')
 }

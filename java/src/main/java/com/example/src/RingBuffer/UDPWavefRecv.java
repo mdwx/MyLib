@@ -14,7 +14,7 @@ class UDPWavefRecv{
 	private DatagramSocket client;
 	private DatagramPacket recvPacket;
 	private byte[] Buf;
-	private int size = 4*1024;
+	private int size = 1024;
 	
 	public UDPWavefRecv(int port,int timeout) {
 
