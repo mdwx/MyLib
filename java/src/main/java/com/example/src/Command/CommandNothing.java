@@ -7,4 +7,9 @@ public class CommandNothing implements Command {
 
 	}
 
+	@Override
+	public void undo() {
+
+	}
+
 }

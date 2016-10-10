@@ -16,7 +16,7 @@ public class Lamp {
 			return false;
 		}
 	}
-	
+
 	public boolean off(){
 		if(ligt == true){
 			ligt = false;

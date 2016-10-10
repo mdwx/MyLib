@@ -7,8 +7,8 @@ import java.util.concurrent.Executors;
 
 /** 
  * @author Vince  E-mail: xhys01@163.com
- * @version 创建时间：2015-6-2 上午11:41:11 
- * 类说明 
+ * @version :2015-6-2 上午11:41:11
+ *
  */
 public class Work implements Runnable {
 

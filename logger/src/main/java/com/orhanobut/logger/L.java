@@ -15,60 +15,43 @@ public class L
         throw new UnsupportedOperationException("cannot be instantiated");  
     }  
   
-    public static boolean isDebug = true;// 是否需要打印bug，可以在application的onCreate函数里面初始化  
+    public static boolean isDebug = true;// TURE is will be print
     private static final String TAG = "Vince_Log";
     private  static StringBuilder  strBuffer;
-    // 下面四个是默认tag的函数  
-    public static void i(String msg)  
-    {  
-        if (isDebug)  
-            Log.i(TAG, msg);  
+
+    public static void i(String msg)  {
+        if (isDebug) Log.i(TAG, msg);
     }  
   
-    public static void d(String msg)  
-    {  
-        if (isDebug)  
-            Log.d(TAG, msg);  
+    public static void d(String msg){
+        if (isDebug) Log.d(TAG, msg);
     }  
   
-    public static void e(String msg)  
-    {  
-        if (isDebug)  
-            Log.e(TAG, msg);  
+    public static void e(String msg){
+        if (isDebug) Log.e(TAG, msg);
     }  
   
-    public static void v(String msg)  
-    {  
-        if (isDebug)  
-            Log.v(TAG, msg);  
+    public static void v(String msg){
+        if (isDebug) Log.v(TAG, msg);
+    }  
+
+    public static void i(String tag, String msg){
+        if (isDebug) Log.i(tag, msg);
     }  
   
-    // 下面是传入自定义tag的函数  
-    public static void i(String tag, String msg)  
-    {  
-        if (isDebug)  
-            Log.i(tag, msg);  
+    public static void d(String tag, String msg){
+        if (isDebug) Log.d(tag, msg);
     }  
   
-    public static void d(String tag, String msg)  
-    {  
-        if (isDebug)  
-            Log.d(tag, msg);
+    public static void e(String tag, String msg){
+        if (isDebug) Log.e(tag, msg);
     }  
   
-    public static void e(String tag, String msg)  
-    {  
-        if (isDebug)  
-            Log.e(tag, msg);
-    }  
-  
-    public static void v(String tag, String msg)  
-    {  
-        if (isDebug)  
-            Log.v(tag, msg);
+    public static void v(String tag, String msg){
+        if (isDebug) Log.v(tag, msg);
     }
 
-    public synchronized  static String FL()   //文件名+当前行
+    public synchronized  static String FL()   //File+line
 	 {     
 		  StackTraceElement stackTraces[] = (new Throwable()).getStackTrace();     
           strBuffer = new StringBuilder("[");
@@ -77,7 +60,7 @@ public class L
 		  return strBuffer.toString();     
 	 }
 
-    public synchronized  static String FLF()   //文件名+当前行+函数名
+    public synchronized  static String FLF()   //File + lien + function
 	 {     
 		  StackTraceElement stackTraces[] = (new Throwable()).getStackTrace();
           strBuffer = new StringBuilder("[");
@@ -87,7 +70,7 @@ public class L
          return strBuffer.toString();
 	 }
 
-    public synchronized  static String All()   //文件名+当前行+函数名+包名
+    public synchronized  static String All()   //File + line + function + packetName
 	 {     
 		  StackTraceElement stackTraces[] = (new Throwable()).getStackTrace();
           strBuffer = new StringBuilder("[");

@@ -10,12 +10,11 @@ public class CommandTelevision implements Command{
 
 	public void excute() {
 		// TODO Auto-generated method stub
-		if(tllevisionState){
-			tllevision.off();
-		}
-		else{
 			tllevision.on();
-		}
-		tllevisionState = !tllevisionState;
+	}
+
+	@Override
+	public void undo() {
+		tllevision.off();
 	}
 }
