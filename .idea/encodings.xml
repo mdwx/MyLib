@@ -1,34 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" defaultCharsetForPropertiesFiles="UTF-8">
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/Adapter/Adapter.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/Adapter/interfaceTargetable.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/Arithmetic.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/CalMinDistance.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/LCS.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/LIS.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/MDKl.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/PatternMatcher.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/SpellUtil.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/Submatrix.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/Work.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/cin_txt.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/dynamicPlanning.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/typeturn.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/Singleton/Singleton.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/factory/ItemA.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/factory/ItemB.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/factory/ItemBase.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/factory/StaticFactory_SendFactory.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/producerandconsumer/Consumer.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/producerandconsumer/Market.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/producerandconsumer/Producer.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/producerandconsumer/Product.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/tree/HashTree.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/tree/LoserTree.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/tree/SBTTree.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/tree/TireTree.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/tree/test.java" charset="UTF-8" />
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/ForTest/typeturn.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/Singleton/Singleton.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/producerandconsumer/Market.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/producerandconsumer/Producer.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/tree/HashTree.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/tree/LoserTree.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/tree/SBTTree.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/java/src/main/java/com/example/src/tree/TireTree.java" charset="GBK" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

@@ -8,7 +8,7 @@ public class typeturn {
 	private static ByteBuffer buffer = ByteBuffer.allocate(8);  
 
 	
-    //byte æ•°ç»„ä¸ int çš„ç›¸äº’è½¬æ¢  
+    //byte Êı×éÓë int µÄÏà»¥×ª»»  
     public static int byteArrayToInt(byte[] b) {  
         return   b[3] & 0xFF |  
                 (b[2] & 0xFF) << 8 |  
@@ -25,7 +25,7 @@ public class typeturn {
         };  
     }  
   
-    //byte æ•°ç»„ä¸ long çš„ç›¸äº’è½¬æ¢  
+    //byte Êı×éÓë long µÄÏà»¥×ª»»  
     public static byte[] longToBytes(long x) {  
         buffer.putLong(0, x);  
         return buffer.array();  
@@ -41,7 +41,7 @@ public class typeturn {
 
 public static void main(String[] args) {
 
-    String name = "è½¬æ¢å­—ç¬¦ä¸²";
+    String name = "×ª»»×Ö·û´®";
 
     try {
         byte[] iso8859 = name.getBytes("ISO-8859-1");
@@ -63,20 +63,20 @@ public static void main(String[] args) {
         e.printStackTrace();
     }
 
-    //æµ‹è¯• int è½¬ byte æ•°ç»„  
+    //²âÊÔ int ×ª byte Êı×é  
     int int2 = 141112127;  
     byte[] bytesInt = intToByteArray(int2);  
    
-    //æµ‹è¯• byte æ•°ç»„è½¬ int  
+    //²âÊÔ byte Êı×é×ª int  
     int int3 = byteArrayToInt(bytesInt);  
     System.out.println("int3=" + int3);
       
       
-    //æµ‹è¯• long è½¬ byte æ•°ç»„  
+    //²âÊÔ long ×ª byte Êı×é  
     long long1 = 2222333;  
     byte[] bytesLong = longToBytes(long1);  
   
-    //æµ‹è¯• byte æ•°ç»„ è½¬ long  
+    //²âÊÔ byte Êı×é ×ª long  
     long long2 = bytesToLong(bytesLong);  
     System.out.println("long2=" + long2);
 }

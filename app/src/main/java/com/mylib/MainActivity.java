@@ -15,12 +15,14 @@ public class MainActivity extends AppCompatActivity {
     private TextView tv_message;
     private Button bt_message;
     private Button bt_bind;
+
     int i =0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         tv_message=(TextView)this.findViewById(R.id.textView);
         bt_message=(Button)this.findViewById(R.id.sendmessage);
         bt_bind=(Button)this.findViewById(R.id.button);
@@ -41,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-    @Override
+   @Override
     protected void onDestroy() {
         super.onDestroy();
         EventBus.getDefault().unregister(this);

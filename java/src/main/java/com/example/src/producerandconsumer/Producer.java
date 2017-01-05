@@ -14,10 +14,10 @@ public class Producer implements Runnable {
 
     public void run() {
         while (true) {               
-                        Product p = new Product("äº§å“" + (int) (Math.random() * 1000), (int) (Math
+                        Product p = new Product("²úÆ·" + (int) (Math.random() * 1000), (int) (Math
                                 .random() * 1000));
                         store.push(p);
-                        System.out.println("äº§å“" + name + "å…±ç”Ÿäº§äº†äº§å“" + p.toString() + "è¿˜æœ‰åº“å­˜é‡"
+                        System.out.println("²úÆ·" + name + "¹²Éú²úÁË²úÆ·" + p.toString() + "»¹ÓĞ¿â´æÁ¿"
                                 + store.getList().size());                  
                     try {
 						Thread.sleep(500);

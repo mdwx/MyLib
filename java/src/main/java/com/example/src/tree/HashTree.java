@@ -2,9 +2,9 @@ package com.example.src.tree;
 @SuppressWarnings("rawtypes")
 public class HashTree<Key,Data> {
 	
-	private final static int[] HashNumber = {2,3,5,7,11,13,17,19,23,29,31};//å“ˆå¸Œé™¤æ•°
-	private int level;//æ ‘çš„æ·±åº¦	
-	private HashNode Root;//æ ‘çš„æ ¹èŠ‚ç‚¹
+	private final static int[] HashNumber = {2,3,5,7,11,13,17,19,23,29,31};//¹şÏ£³ıÊı
+	private int level;//Ê÷µÄÉî¶È	
+	private HashNode Root;//Ê÷µÄ¸ù½Úµã
 	
 	public HashTree(){
 		level = 0;
@@ -15,17 +15,17 @@ public class HashTree<Key,Data> {
 	@SuppressWarnings("hiding")
 	class HashNode<Key ,Data> 
 	{
-		private Key m_key; //ç»“ç‚¹çš„å…³é”®å­—
-		private Data m_value; //ç»“ç‚¹çš„æ•°æ®å¯¹è±¡
-		private boolean occupied; //ç»“ç‚¹æ˜¯å¦è¢«å æ®ï¼Œå¦‚æœæ˜¯è¡¨ç¤ºç»“ç‚¹çš„å…³é”®å­—æœ‰æ•ˆ
-		private HashNode[] child; //ç»“ç‚¹çš„å­ç»“ç‚¹æ•°ç»„
+		private Key m_key; //½áµãµÄ¹Ø¼ü×Ö
+		private Data m_value; //½áµãµÄÊı¾İ¶ÔÏó
+		private boolean occupied; //½áµãÊÇ·ñ±»Õ¼¾İ£¬Èç¹ûÊÇ±íÊ¾½áµãµÄ¹Ø¼ü×ÖÓĞĞ§
+		private HashNode[] child; //½áµãµÄ×Ó½áµãÊı×é
 		
 		public HashNode() {}
 		public HashNode(int level, Key key, Data date) {
-			m_key = key; //ç»“ç‚¹çš„å…³é”®å­—
-			m_value = date; //ç»“ç‚¹çš„æ•°æ®å¯¹è±¡
-			occupied = true; //ç»“ç‚¹æ˜¯å¦è¢«å æ®ï¼Œå¦‚æœæ˜¯è¡¨ç¤ºç»“ç‚¹çš„å…³é”®å­—æœ‰æ•ˆ
-			child = new HashNode[HashNumber[level]]; //ç»“ç‚¹çš„å­ç»“ç‚¹æ•°ç»„
+			m_key = key; //½áµãµÄ¹Ø¼ü×Ö
+			m_value = date; //½áµãµÄÊı¾İ¶ÔÏó
+			occupied = true; //½áµãÊÇ·ñ±»Õ¼¾İ£¬Èç¹ûÊÇ±íÊ¾½áµãµÄ¹Ø¼ü×ÖÓĞĞ§
+			child = new HashNode[HashNumber[level]]; //½áµãµÄ×Ó½áµãÊı×é
 		}		
 	}
 	

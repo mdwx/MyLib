@@ -2,17 +2,17 @@ package com.example.src.tree;
 
 public class TireTree {
 	private int SIZE = 26;
-	private TrieNode root;// å­—å…¸æ ‘çš„æ ¹
+	private TrieNode root;// ×ÖµäÊ÷µÄ¸ù
 
-	TireTree() {// åˆå§‹åŒ–å­—å…¸æ ‘
+	TireTree() {// ³õÊ¼»¯×ÖµäÊ÷
 		root = new TrieNode();
 	}
 
-	private class TrieNode {// å­—å…¸æ ‘èŠ‚ç‚¹
-		private int num;// æœ‰å¤šå°‘å•è¯é€šè¿‡è¿™ä¸ªèŠ‚ç‚¹,å³èŠ‚ç‚¹å­—ç¬¦å‡ºç°çš„æ¬¡æ•°
-		private TrieNode[] son;// æ‰€æœ‰çš„å„¿å­èŠ‚ç‚¹
-		private boolean isEnd;// æ˜¯ä¸æ˜¯æœ€åä¸€ä¸ªèŠ‚ç‚¹
-		private char val;// èŠ‚ç‚¹çš„å€¼
+	private class TrieNode {// ×ÖµäÊ÷½Úµã
+		private int num;// ÓĞ¶àÉÙµ¥´ÊÍ¨¹ıÕâ¸ö½Úµã,¼´½Úµã×Ö·û³öÏÖµÄ´ÎÊı
+		private TrieNode[] son;// ËùÓĞµÄ¶ù×Ó½Úµã
+		private boolean isEnd;// ÊÇ²»ÊÇ×îºóÒ»¸ö½Úµã
+		private char val;// ½ÚµãµÄÖµ
 
 		TrieNode() {
 			num = 1;
@@ -21,8 +21,8 @@ public class TireTree {
 		}
 	}
 
-	// å»ºç«‹å­—å…¸æ ‘
-	public void insert(String str) {// åœ¨å­—å…¸æ ‘ä¸­æ’å…¥ä¸€ä¸ªå•è¯
+	// ½¨Á¢×ÖµäÊ÷
+	public void insert(String str) {// ÔÚ×ÖµäÊ÷ÖĞ²åÈëÒ»¸öµ¥´Ê
 		if (str == null || str.length() == 0) {
 			return;
 		}
@@ -43,7 +43,7 @@ public class TireTree {
 		node.isEnd = true;
 	}
 
-	// è®¡ç®—å•è¯å‰ç¼€çš„æ•°é‡
+	// ¼ÆËãµ¥´ÊÇ°×ºµÄÊıÁ¿
 	public int countPrefix(String prefix) {
 		if (prefix == null || prefix.length() == 0) {
 			return -1;
@@ -61,7 +61,7 @@ public class TireTree {
 		return node.num;
 	}
 
-	// åœ¨å­—å…¸æ ‘ä¸­æŸ¥æ‰¾ä¸€ä¸ªå®Œå…¨åŒ¹é…çš„å•è¯.
+	// ÔÚ×ÖµäÊ÷ÖĞ²éÕÒÒ»¸öÍêÈ«Æ¥ÅäµÄµ¥´Ê.
 	public boolean has(String str) {
 		if (str == null || str.length() == 0) {
 			return false;
@@ -79,7 +79,7 @@ public class TireTree {
 		return node.isEnd;
 	}
 
-	// å‰åºéå†å­—å…¸æ ‘.
+	// Ç°Ğò±éÀú×ÖµäÊ÷.
 	public void preTraverse(TrieNode node) {
 		if (node != null) {
 			System.out.print(node.val + "-");
