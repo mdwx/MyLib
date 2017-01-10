@@ -8,6 +8,8 @@ import android.widget.TextView;
 
 import org.greenrobot.eventbus.EventBus;
 
+import base.MessageEvent;
+
 /**
  * Created by Arales on 2016/8/22.
  * E_mail :  xhys01@163.com

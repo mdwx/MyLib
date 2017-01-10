@@ -13,47 +13,40 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.greendao.query.Query;
-
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.List;
 
-import base.Note;
-import base.NoteType;
-import base.NotesAdapter;
-import greendao.generator.DaoSession;
-import greendao.generator.NoteDao;
+import base.greendao.Customer;
+import base.greendao.Note;
+import base.greendao.NotesAdapter;
+import base.greendao.Types;
 
 public class NoteActivity extends AppCompatActivity {
 
     private EditText editText;
     private View addNoteButton;
 
-    private NoteDao noteDao;
-    private Query<Note> notesQuery;
     private NotesAdapter notesAdapter;
-
+    private DaoManager daoManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-       setUpViews();
+        setUpViews();
 
         // get the note DAO
-        DaoSession daoSession = ((App) getApplication()).getDaoSession();
-        noteDao = daoSession.getNoteDao();
+        daoManager = new DaoManager(((App) getApplication()).getDaoSession(), Note.class);
 
-        // query all notes, sorted a-z by their text
-        notesQuery = noteDao.queryBuilder().orderAsc(NoteDao.Properties.Text).build();
+//        // query all notes, sorted a-z by their text
+//        notesQuery = noteDao.queryBuilder().orderAsc(NoteDao.Properties.Text).build();
+
         updateNotes();
 
     }
     private void updateNotes() {
-        List<Note> notes = notesQuery.list();
-        notesAdapter.setNotes(notes);
+        notesAdapter.setNotes(daoManager.getList());
     }
 
     protected void setUpViews() {
@@ -68,7 +61,7 @@ public class NoteActivity extends AppCompatActivity {
                 Note note = notesAdapter.getNote(position);
                 Long noteId = note.getId();
 
-                noteDao.deleteByKey(noteId);
+                daoManager.getDao().deleteByKey(noteId);
                 Log.d("DaoExample", "Deleted note, ID: " + noteId);
 
                 updateNotes();
@@ -115,24 +108,28 @@ public class NoteActivity extends AppCompatActivity {
     }
 
     private void addNote() {
+
+
         String noteText = editText.getText().toString();
         editText.setText("");
 
         final DateFormat df = DateFormat.getDateTimeInstance(DateFormat.MEDIUM, DateFormat.MEDIUM);
         String comment = "Added on " + df.format(new Date());
 
-        Note note = new Note(null, noteText, comment, new Date(), NoteType.TEXT);
-        noteDao.insert(note);
+        Note note = new Note(null, noteText, comment, new Date(), Types.TEXT);
+        daoManager.insert(note);
+        daoManager.insert(Customer.class,new Customer(10L,"person1", 32, "man",new Date(),new Date(), null,new Date()));
+
+        List list = daoManager.getList(Customer.class);
+        if(list != null) {
+            for (Object p : list) {
+                System.out.println(p.toString());
+            }
+    }
+        daoManager.getDao(Customer.class).deleteAll();
         Log.d("DaoExample", "Inserted new note, ID: " + note.getId());
 
         updateNotes();
-    }
-
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        EventBus.getDefault().unregister(this);
     }
 }
 

@@ -1,4 +1,4 @@
-package com.mylib;
+package base;
 
 /**
  * Created by Arales on 2016/8/22.

@@ -2,9 +2,16 @@ apply plugin: 'com.android.application'
 apply plugin: 'org.greenrobot.greendao'
 
 android {
+    signingConfigs {
+        Signing_fonsview {
+            keyAlias 'fonsview'
+            keyPassword 'hello123'
+            storeFile file('D:/Users/SignKey.jks')
+            storePassword 'hello123'
+        }
+    }
     compileSdkVersion 23
     buildToolsVersion "23.0.3"
-
     defaultConfig {
         applicationId "com.mylib"
         minSdkVersion 19
@@ -16,9 +23,10 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.Signing_fonsview
         }
     }
-    greendao{
+    greendao {
         schemaVersion 1000 //database version
         daoPackage 'greendao.generator'  //DaoMaster 、DaoSession、Dao  packet name
         targetGenDir 'src/main/java/'//path for DaoMaster 、DaoSession、Dao
@@ -28,24 +36,17 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-
     compile 'com.android.support:appcompat-v7:23.3.0'
     compile 'com.android.support:cardview-v7:23.3.0'
     compile 'com.android.support:recyclerview-v7:23.3.0'
-
-
     compile 'org.greenrobot:greendao:3.2.0'
     compile 'org.greenrobot:eventbus:3.0.0'
-
     // This is only needed if you want to use encrypted databases
     compile 'net.zetetic:android-database-sqlcipher:3.5.4'
-
     compile 'io.reactivex:rxandroid:1.2.1'
     compile 'io.reactivex:rxjava:1.1.8'
-
     compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'
     compile 'com.squareup.retrofit2:retrofit:2.1.0'
     compile 'com.squareup.retrofit2:converter-gson:2.1.0'
-
     compile project(':logger')
 }

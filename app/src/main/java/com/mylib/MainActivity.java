@@ -11,6 +11,8 @@ import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
+import base.MessageEvent;
+
 public class MainActivity extends AppCompatActivity {
     private TextView tv_message;
     private Button bt_message;
